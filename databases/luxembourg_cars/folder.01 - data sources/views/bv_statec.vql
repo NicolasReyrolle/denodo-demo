@@ -1,0 +1,39 @@
+﻿CREATE OR REPLACE WRAPPER JSON bv_statec
+    FOLDER = '/01 - data sources'
+    DATASOURCENAME=ds_statec
+    TUPLEROOT '/JSONFile'
+    OUTPUTSCHEMA (jsonfile = 'JSONFile' : REGISTER OF (
+        jsonarray = 'JSONArray' : ARRAY OF (
+            jsonarray = 'JSONArray' : REGISTER OF (
+                englishlabel_0 = 'english-label' : 'java.lang.String',
+                frenchlabel_0 = 'french-label' : 'java.lang.String',
+                code = 'code' : 'java.lang.Integer'
+            )
+        )
+    )
+    );
+
+CREATE OR REPLACE TYPE ds_statec_jsonarray_jsonarray AS REGISTER OF (englishlabel_0:text, frenchlabel_0:text, code:int);
+
+CREATE OR REPLACE TYPE ds_statec_jsonarray AS ARRAY OF ds_statec_jsonarray_jsonarray;
+
+CREATE OR REPLACE TABLE bv_statec I18N us_pst (
+        jsonarray:ds_statec_jsonarray
+    )
+    FOLDER = '/01 - data sources'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_statec(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD jsonarray NOS ZERO ()
+             ADD jsonarray NOS ZERO ()
+             ADD jsonarray.englishlabel_0 NOS ZERO ()
+             ADD jsonarray.frenchlabel_0 NOS ZERO ()
+             ADD jsonarray.code NOS ZERO ()
+        )
+        OUTPUTLIST (jsonarray
+        )
+        WRAPPER (json bv_statec)
+    );
+
