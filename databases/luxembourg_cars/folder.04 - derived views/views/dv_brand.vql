@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_brand FOLDER = '/04 - derived views' AS SELECT DISTINCT iv_immatriculations.codmrq AS brand_code, iv_immatriculations.libmrq AS brand_name FROM iv_immatriculations;
+
+ALTER VIEW dv_brand
+ LAYOUT (iv_immatriculations = [20, 20, 200, 807]);
+

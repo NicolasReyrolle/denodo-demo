@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW iv_file_list FOLDER = '/03 - integration views' AS SELECT bv_file_list.parentfolder AS parentfolder, bv_file_list.relativepath AS relativepath, bv_file_list.filename AS filename, bv_file_list.extension AS extension, bv_file_list.fullpath AS fullpath, bv_file_list.filetype AS filetype, bv_file_list.hidden AS hidden, bv_file_list.datemodified AS datemodified, bv_file_list.canread AS canread, bv_file_list.canwrite AS canwrite, bv_file_list.canexecute AS canexecute, bv_file_list.size AS size, bv_file_list.recursive AS recursive FROM bv_file_list WHERE (parentfolder = '/home/denodo/data/immatriculations' AND recursive = 'true' AND extension = 'xlsx');
+
+ALTER VIEW iv_file_list
+ LAYOUT (bv_file_list = [20, 20, 205, 286]);
+

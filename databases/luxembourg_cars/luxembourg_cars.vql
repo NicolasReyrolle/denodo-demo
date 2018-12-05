@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE DATABASE luxembourg_cars '';
+
+ALTER DATABASE luxembourg_cars
+  CHARSET DEFAULT;
+

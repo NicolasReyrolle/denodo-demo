@@ -1,0 +1,186 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_immatriculations_full
+    FOLDER = '/02 - base views'
+    DATASOURCENAME=ds_immatriculations_full
+    CATALOGNAME='${databases.luxembourg_cars.folder.02 - base views.views.jdbc.bv_immatriculations_full.CATALOGNAME}' 
+    RELATIONNAME='immatriculations' 
+    OUTPUTSCHEMA (
+        catstc = 'CATSTC' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        codcar = 'CODCAR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        libcar = 'LIBCAR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        cateu = 'CATEU' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        coul = 'COUL' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        induti = 'INDUTI' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        paypvn = 'PAYPVN' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        codmrq = 'CODMRQ' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        libmrq = 'LIBMRQ' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        typusi = 'TYPUSI' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        typcom = 'TYPCOM' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        pvrnum = 'PVRNUM' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        pvrvar = 'PVRVAR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        pvrver = 'PVRVER' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        datcirprm = 'DATCIRPRM' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        datcir_gd = 'DATCIR_GD' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        datcir = 'DATCIR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        dathorcir = 'DATHORCIR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        mvid = 'MVID' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        mma = 'MMA' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        mmaens = 'MMAENS' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        mmaatt = 'MMAATT' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        mmarsf = 'MMARSF' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        mmaraf = 'MMARAF' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        i4x4 = 'I4X4' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        abs = 'ABS' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        asr = 'ASR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        plaava = 'PLAAVA' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        plaarr = 'PLAARR' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        plasav = 'PLASAV' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        plasar = 'PLASAR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        pladeb = 'PLADEB' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        plaass = 'PLAASS' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        lon = 'LON' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        lar = 'LAR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        hau = 'HAU' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        essim = 'ESSIM' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        estan = 'ESTAN' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        estri = 'ESTRI' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        empmax = 'EMPMAX' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        lares1 = 'LARES1' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        lares2 = 'LARES2' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        typmot = 'TYPMOT' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        codcrb = 'CODCRB' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        libcrb = 'LIBCRB' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        nbrcyl = 'NBRCYL' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        pkw = 'PKW' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        cyd = 'CYD' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        infouti = 'INFOUTI' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE,
+        infco2 = 'INFCO2' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        l100km = 'L100KM' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        infparticule = 'INFPARTICULE' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        infnox = 'INFNOX' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypesize='22', description='', sourcetypeid='8', sourcetypename='DOUBLE')  SORTABLE,
+        eunorm = 'EUNORM' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_immatriculations_full I18N us_pst (
+        catstc:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        codcar:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        libcar:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        cateu:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        coul:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        induti:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        paypvn:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        codmrq:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        libmrq:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        typusi:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        typcom:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        pvrnum:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        pvrvar:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        pvrver:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        datcirprm:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        datcir_gd:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        datcir:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        dathorcir:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        mvid:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        mma:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        mmaens:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        mmaatt:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        mmarsf:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        mmaraf:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        i4x4:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        abs:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        asr:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        plaava:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        plaarr:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        plasav:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        plasar:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        pladeb:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        plaass:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        lon:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        lar:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        hau:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        essim:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        estan:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        estri:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        empmax:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        lares1:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        lares2:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        typmot:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        codcrb:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        libcrb:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        nbrcyl:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        pkw:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        cyd:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        infouti:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
+        infco2:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        l100km:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        infparticule:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        infnox:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
+        eunorm:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12')
+    )
+    FOLDER = '/02 - base views'
+    CACHE OFF
+    BATCHSIZEINCACHE DEFAULT
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_immatriculations_full(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD catstc (any) OPT ANY
+             ADD codcar (any) OPT ANY
+             ADD libcar (any) OPT ANY
+             ADD cateu (any) OPT ANY
+             ADD coul (any) OPT ANY
+             ADD induti (any) OPT ANY
+             ADD paypvn (any) OPT ANY
+             ADD codmrq (any) OPT ANY
+             ADD libmrq (any) OPT ANY
+             ADD typusi (any) OPT ANY
+             ADD typcom (any) OPT ANY
+             ADD pvrnum (any) OPT ANY
+             ADD pvrvar (any) OPT ANY
+             ADD pvrver (any) OPT ANY
+             ADD datcirprm (any) OPT ANY
+             ADD datcir_gd (any) OPT ANY
+             ADD datcir (any) OPT ANY
+             ADD dathorcir (any) OPT ANY
+             ADD mvid (any) OPT ANY
+             ADD mma (any) OPT ANY
+             ADD mmaens (any) OPT ANY
+             ADD mmaatt (any) OPT ANY
+             ADD mmarsf (any) OPT ANY
+             ADD mmaraf (any) OPT ANY
+             ADD i4x4 (any) OPT ANY
+             ADD abs (any) OPT ANY
+             ADD asr (any) OPT ANY
+             ADD plaava (any) OPT ANY
+             ADD plaarr (any) OPT ANY
+             ADD plasav (any) OPT ANY
+             ADD plasar (any) OPT ANY
+             ADD pladeb (any) OPT ANY
+             ADD plaass (any) OPT ANY
+             ADD lon (any) OPT ANY
+             ADD lar (any) OPT ANY
+             ADD hau (any) OPT ANY
+             ADD essim (any) OPT ANY
+             ADD estan (any) OPT ANY
+             ADD estri (any) OPT ANY
+             ADD empmax (any) OPT ANY
+             ADD lares1 (any) OPT ANY
+             ADD lares2 (any) OPT ANY
+             ADD typmot (any) OPT ANY
+             ADD codcrb (any) OPT ANY
+             ADD libcrb (any) OPT ANY
+             ADD nbrcyl (any) OPT ANY
+             ADD pkw (any) OPT ANY
+             ADD cyd (any) OPT ANY
+             ADD infouti (any) OPT ANY
+             ADD infco2 (any) OPT ANY
+             ADD l100km (any) OPT ANY
+             ADD infparticule (any) OPT ANY
+             ADD infnox (any) OPT ANY
+             ADD eunorm (any) OPT ANY
+        )
+        OUTPUTLIST (abs, asr, cateu, catstc, codcar, codcrb, codmrq, coul, cyd, datcir, datcir_gd, datcirprm, dathorcir, empmax, essim, estan, estri, eunorm, hau, i4x4, induti, infco2, infnox, infouti, infparticule, l100km, lar, lares1, lares2, libcar, libcrb, libmrq, lon, mma, mmaatt, mmaens, mmaraf, mmarsf, mvid, nbrcyl, paypvn, pkw, plaarr, plaass, plaava, pladeb, plasar, plasav, pvrnum, pvrvar, pvrver, typcom, typmot, typusi
+        )
+        WRAPPER (jdbc bv_immatriculations_full)
+    );
+
