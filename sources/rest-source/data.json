@@ -16,17 +16,17 @@
   },
   {
     "code": 5,
-    "french-label": "Voiture particulière",
+    "french-label": "Voiture particuli\u00e8re",
     "english-label": "Private car"
   },
   {
     "code": 6,
-    "french-label": "Voiture à usage mixte",
+    "french-label": "Voiture \u00e0 usage mixte",
     "english-label": "Vehicles intended for mixed use"
   },
   {
     "code": 7,
-    "french-label": "Véhicule utilitaire",
+    "french-label": "V\u00e9hicule utilitaire",
     "english-label": "Utility vehicle"
   },
   {
@@ -51,7 +51,7 @@
   },
   {
     "code": 29,
-    "french-label": "Véhicule spécial",
+    "french-label": "V\u00e9hicule sp\u00e9cial",
     "english-label": "Special Vehicle"
   },
   {
@@ -66,7 +66,7 @@
   },
   {
     "code": 39,
-    "french-label": "Auto véhicule automoteur",
+    "french-label": "Auto v\u00e9hicule automoteur",
     "english-label": ""
   },
   {
@@ -91,7 +91,7 @@
   },
   {
     "code": 53,
-    "french-label": "Quadricycle léger",
+    "french-label": "Quadricycle l\u00e9ger",
     "english-label": "Lightweight Quad Bike"
   },
   {
