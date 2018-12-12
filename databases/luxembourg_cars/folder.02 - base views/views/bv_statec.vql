@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE WRAPPER JSON bv_statec
-    FOLDER = '/01 - data sources'
+    FOLDER = '/02 - base views'
     DATASOURCENAME=ds_statec
     TUPLEROOT '/JSONFile'
     OUTPUTSCHEMA (jsonfile = 'JSONFile' : REGISTER OF (
@@ -20,7 +20,7 @@ CREATE OR REPLACE TYPE ds_statec_jsonarray AS ARRAY OF ds_statec_jsonarray_jsona
 CREATE OR REPLACE TABLE bv_statec I18N us_pst (
         jsonarray:ds_statec_jsonarray
     )
-    FOLDER = '/01 - data sources'
+    FOLDER = '/02 - base views'
     CACHE OFF
     TIMETOLIVEINCACHE DEFAULT
     ADD SEARCHMETHOD bv_statec(
