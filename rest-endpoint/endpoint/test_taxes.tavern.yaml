@@ -1,9 +1,42 @@
 test_name: Check taxes
 
 stages:
-  - name: Test not implemented status
+  - name: Test petrol
     request:
-      url: http://localhost:5000/companyCarTaxes/Essence/100
+      url: http://localhost:5000/companyCarTaxes/petrol/25
       method: GET
     response:
-      status_code: 501
+      status_code: 200
+      body:
+        fuel: petrol
+        minCo2: 0
+        maxCo2: 50
+        taxRate: 0.8
+
+stages:
+  - name: Test boundaries
+    request:
+      url: http://localhost:5000/companyCarTaxes/petrol/150
+      method: GET
+    response:
+      status_code: 200
+      body:
+        taxRate: 1.3
+
+stages:
+  - name: Test electric cars
+    request:
+      url: http://localhost:5000/companyCarTaxes/electric/0
+      method: GET
+    response:
+      status_code: 200
+      body:
+        taxRate: 0.5
+
+stages:
+  - name: Check 404 if electric car with CO2 emission
+    request:
+      url: http://localhost:5000/companyCarTaxes/electric/1
+      method: GET
+    response:
+      status_code: 404

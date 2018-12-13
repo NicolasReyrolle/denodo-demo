@@ -10,6 +10,7 @@ app = Flask(__name__)
 api = Api(app)
 
 statecCategories = json.load(open('../data/statec.json'))
+carTaxes = json.load(open('../data/carTaxes.json'))
 
 
 class StatecCategory(Resource):
@@ -27,7 +28,12 @@ class StatecCategoryList(Resource):
 
 class CompanyCarTax(Resource):
     def get(self, fuel, co2):
-        return "Not (yet) implemented", 501
+        for carTax in carTaxes:
+            if fuel == carTax["fuel"]:
+                if co2 > carTax["minCo2"] and co2 <= carTax["maxCo2"]:
+                    return carTax
+
+        return "Tax rate not found", 404
 
 
 api.add_resource(StatecCategory, "/statecCategory/<int:code>")

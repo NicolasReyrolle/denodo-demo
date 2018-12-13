@@ -1,0 +1,57 @@
+[
+  {
+    "fuel": "petrol",
+    "minCo2": 0,
+    "maxCo2": 50,
+    "taxRate": 0.8
+  },
+  {
+    "fuel": "petrol",
+    "minCo2": 50,
+    "maxCo2": 110,
+    "taxRate": 1.0
+  },
+  {
+    "fuel": "petrol",
+    "minCo2": 110,
+    "maxCo2": 150,
+    "taxRate": 1.3
+  },
+  {
+    "fuel": "petrol",
+    "minCo2": 150,
+    "maxCo2": 1000000,
+    "taxRate": 1.7
+  },
+  {
+    "fuel": "diesel",
+    "minCo2": 0,
+    "maxCo2": 50,
+    "taxRate": 1.0
+  },
+  {
+    "fuel": "diesel",
+    "minCo2": 50,
+    "maxCo2": 110,
+    "taxRate": 1.2
+  },
+  {
+    "fuel": "diesel",
+    "minCo2": 110,
+    "maxCo2": 150,
+    "taxRate": 1.5
+  },
+  {
+    "fuel": "diesel",
+    "minCo2": 150,
+    "maxCo2": 1000000,
+    "taxRate": 1.8
+  },
+  {
+    "fuel": "electric",
+    "minCo2": 0,
+    "maxCo2": 0,
+    "taxRate": 0.5
+  }
+]
+
