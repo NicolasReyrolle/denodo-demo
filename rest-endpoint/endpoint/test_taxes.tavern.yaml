@@ -9,11 +9,9 @@ stages:
       status_code: 200
       body:
         fuel: petrol
-        minCo2: 0
         maxCo2: 50
         taxRate: 0.8
 
-stages:
   - name: Test boundaries
     request:
       url: http://localhost:5000/companyCarTaxes/petrol/150
@@ -23,7 +21,6 @@ stages:
       body:
         taxRate: 1.3
 
-stages:
   - name: Test electric cars
     request:
       url: http://localhost:5000/companyCarTaxes/electric/0
@@ -33,10 +30,12 @@ stages:
       body:
         taxRate: 0.5
 
-stages:
-  - name: Check 404 if electric car with CO2 emission
+  - name: Check CO2 emission upper bound
     request:
-      url: http://localhost:5000/companyCarTaxes/electric/1
+      url: http://localhost:5000/companyCarTaxes/diesel/300
       method: GET
     response:
-      status_code: 404
+      status_code: 200
+      body:
+        minCo2: 150
+        taxRate: 1.8
