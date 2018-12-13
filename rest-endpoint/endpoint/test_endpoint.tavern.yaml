@@ -1,0 +1,27 @@
+test_name: Check the categories
+
+stages:
+  - name: Make sure something is returned for the full list
+    request:
+      url: http://localhost:5000/statecCategory
+      method: GET
+    response:
+        status_code: 200
+
+  - name: Make sure a specific value is returned when requested
+    request:
+      url: http://localhost:5000/statecCategory/0
+      method: GET
+    response:
+      status_code: 200
+      body:
+        code: 0
+        french-label: Sans code
+        english-label: Codeless
+
+  - name: Make sure an non existing category returns 404
+    request:
+      url: http://localhost:5000/statecCategory/ZZ
+      method: GET
+    response:
+      status_code: 404

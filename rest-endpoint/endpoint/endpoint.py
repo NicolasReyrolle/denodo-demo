@@ -9,7 +9,7 @@ from flask_restful import Api, Resource, reqparse
 app = Flask(__name__)
 api = Api(app)
 
-statecCategories = json.load(open('data.json'))
+statecCategories = json.load(open('../data/statec.json'))
 
 
 class StatecCategory(Resource):
