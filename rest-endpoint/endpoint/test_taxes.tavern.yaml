@@ -1,0 +1,9 @@
+test_name: Check taxes
+
+stages:
+  - name: Test not implemented status
+    request:
+      url: http://localhost:5000/companyCarTaxes/Essence/100
+      method: GET
+    response:
+      status_code: 501

@@ -25,7 +25,13 @@ class StatecCategoryList(Resource):
         return statecCategories
 
 
+class CompanyCarTax(Resource):
+    def get(self, fuel, co2):
+        return "Not (yet) implemented", 501
+
+
 api.add_resource(StatecCategory, "/statecCategory/<int:code>")
 api.add_resource(StatecCategoryList, "/statecCategory")
+api.add_resource(CompanyCarTax, "/companyCarTaxes/<string:fuel>/<int:co2>")
 
 app.run(debug=True)
