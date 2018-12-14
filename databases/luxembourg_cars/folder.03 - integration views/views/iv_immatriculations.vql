@@ -2,5 +2,5 @@
     codmrq (description = 'Manufacturer Code'),
     libmrq (description = 'Manufacturer wording')
 )
- AS SELECT catstc, codcar, libcar, cateu, coul, induti, paypvn, codmrq, libmrq, typusi, typcom, pvrnum, pvrvar, pvrver, datcirprm, datcir_gd, datcir, dathorcir, mvid, mma, mmaens, mmaatt, mmarsf, mmaraf, i4x4, abs, asr, plaava, plaarr, plasav, plasar, pladeb, plaass, lon, lar, hau, essim, estan, estri, empmax, lares1, lares2, typmot, codcrb, libcrb, nbrcyl, pkw, cyd, infouti, infco2, l100km, infparticule, infnox, eunorm FROM bv_immatriculations_full;
+ AS SELECT catstc, codcar, libcar, cateu, coul, induti, paypvn, codmrq, libmrq, typusi, typcom, pvrnum, pvrvar, pvrver, datcirprm, datcir_gd, datcir, dathorcir, mvid, mma, mmaens, mmaatt, mmarsf, mmaraf, i4x4, abs, asr, plaava, plaarr, plasav, plasar, pladeb, plaass, lon, lar, hau, essim, estan, estri, empmax, lares1, lares2, typmot, codcrb, libcrb, nbrcyl, pkw, cyd, infouti, infco2, l100km, infparticule, infnox, eunorm FROM bv_immatriculations;
 
