@@ -43,4 +43,4 @@ api.add_resource(StatecCategory, "/statecCategory/<int:code>")
 api.add_resource(StatecCategoryList, "/statecCategory")
 api.add_resource(CompanyCarTax, "/companyCarTaxes/<string:fuel>/<int:co2>")
 
-app.run(debug=True)
+app.run()
