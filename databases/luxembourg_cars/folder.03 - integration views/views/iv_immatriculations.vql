@@ -2,12 +2,5 @@
     codmrq (description = 'Manufacturer Code'),
     libmrq (description = 'Manufacturer wording')
 )
- AS SELECT catstc, codcar, libcar, cateu, coul, induti, paypvn, codmrq, libmrq, typusi, typcom, pvrnum, pvrvar, pvrver, datcirprm, datcir_gd, datcir, dathorcir, mvid, mma, mmaens, mmaatt, mmarsf, mmaraf, i4x4, abs, asr, plaava, plaarr, plasav, plasar, pladeb, plaass, lon, lar, hau, essim, estan, estri, empmax, lares1, lares2, typmot, codcrb, libcrb, nbrcyl, pkw, cyd, infouti, infco2, l100km, infparticule, infnox, eunorm, filename, fullpath, codeop FROM (SELECT * FROM bv_immatriculations_full UNION SELECT libcar, plaarr, datcir_gd, nbrcyl, infouti, pladeb, l100km, codmrq, infnox, codeop, libmrq, plaass, mmaatt, typusi, datcir, catstc, lares2, pkw, mma, cyd, mvid, induti, plasav, mmarsf, plasar, plaava, datcirprm, essim, empmax, i4x4, codcrb, lon, pvrnum, paypvn, filename, pvrver, pvrvar, abs, typcom, dathorcir, estri, cateu, infco2, infparticule, lar, typmot, mmaraf, estan, mmaens, hau, eunorm, asr, lares1, libcrb, fullpath, codcar, coul FROM bv_immatriculations_merge);
-
-ALTER VIEW iv_immatriculations
- LAYOUT (bv_immatriculations_full = [40, 10, 350, 790], bv_immatriculations_merge = [540, 10, 350, 760]);
-
-ALTER VIEW iv_immatriculations
- CACHE PARTIAL
-     BATCHSIZEINCACHE DEFAULT TIMETOLIVEINCACHE DEFAULT;
+ AS SELECT catstc, codcar, libcar, cateu, coul, induti, paypvn, codmrq, libmrq, typusi, typcom, pvrnum, pvrvar, pvrver, datcirprm, datcir_gd, datcir, dathorcir, mvid, mma, mmaens, mmaatt, mmarsf, mmaraf, i4x4, abs, asr, plaava, plaarr, plasav, plasar, pladeb, plaass, lon, lar, hau, essim, estan, estri, empmax, lares1, lares2, typmot, codcrb, libcrb, nbrcyl, pkw, cyd, infouti, infco2, l100km, infparticule, infnox, eunorm FROM bv_immatriculations_full;
 
