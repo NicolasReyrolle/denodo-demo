@@ -10,8 +10,8 @@ from flask_restful import Api, Resource, reqparse
 app = Flask(__name__)
 api = Api(app)
 
-statecCategories = json.load(open('../data/statec.json'))
-carTaxes = json.load(open('../data/carTaxes.json'))
+statecCategories = json.load(open('data/statec.json'))
+carTaxes = json.load(open('data/carTaxes.json'))
 
 
 class StatecCategory(Resource):

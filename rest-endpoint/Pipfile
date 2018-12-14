@@ -9,3 +9,5 @@ tavern = "*"
 [packages]
 flask-restful = "*"
 
+[scripts]
+start = "python endpoint/endpoint.py"

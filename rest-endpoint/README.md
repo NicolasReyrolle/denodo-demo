@@ -1,10 +1,9 @@
-To do first: install flask-restful
-
-```sh
-sudo pip3 install flask-restful
+To do first: install all dependencies in the virtual environment
+```bash
+pipenv sync
 ```
 
 To run: 
 ```bash
-python app.py
+pipenv run start
 ```
