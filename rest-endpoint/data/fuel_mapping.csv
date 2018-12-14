@@ -1,0 +1,20 @@
+input_fuel;rest_fuel
+CNG(GAZ NATUREL COMPRIME);petrol
+DIESEL;diesel
+DIESEL (GASOIL-FUEL);diesel
+DIESEL + LPG;diesel
+ELECTRIQUE;electric
+ESSENCE;petrol
+ESSENCE + CNG;petrol
+ESSENCE + LPG;petrol
+ESSENCE + METHANE;petrol
+ESSENCE / ETHANOL;petrol
+HYBRIDE - DIE./ELEC. NOVC;diesel
+HYBRIDE - DIE./ELEC. OVC;diesel
+HYBRIDE - ELECTRIQUE/ESS.;petrol
+HYBRIDE - ESS./ELEC. NOVC;diesel
+HYBRIDE - ESS./ELEC. OVC;diesel
+INCONNU;
+LNG;petrol
+LPG;petrol
+PAS DE CARBURANT;0
