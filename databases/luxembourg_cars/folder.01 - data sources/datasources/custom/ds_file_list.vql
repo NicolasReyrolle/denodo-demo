@@ -1,5 +1,0 @@
-﻿CREATE OR REPLACE DATASOURCE CUSTOM ds_file_list
-    FOLDER = '/01 - data sources'
-    CLASSNAME='com.denodo.connect.filesystem.ReadFileSystemConnector'
-    JARS 'denodo-filesystem-customwrapper-7.0';
-

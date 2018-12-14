@@ -1,0 +1,37 @@
+﻿CREATE OR REPLACE WRAPPER JSON bv_car_taxes
+    FOLDER = '/02 - base views'
+    DATASOURCENAME=ds_car_taxes
+    TUPLEROOT '/JSONFile'
+    OUTPUTSCHEMA (jsonfile = 'JSONFile' : REGISTER OF (
+        co2 = 'CO2' : 'java.lang.String' (OBL) (DEFAULTVALUE='100') EXTERN,
+        minco2 = 'minCo2' : 'java.lang.Integer',
+        fuel = 'fuel' : 'java.lang.String' (OBL) (DEFAULTVALUE='petrol'),
+        taxrate = 'taxRate' : 'java.lang.Double',
+        maxco2 = 'maxCo2' : 'java.lang.Integer'
+    )
+    );
+
+CREATE OR REPLACE TABLE bv_car_taxes I18N us_pst (
+        co2:text (extern), 
+        minco2:int, 
+        fuel:text, 
+        taxrate:double, 
+        maxco2:int
+    )
+    FOLDER = '/02 - base views'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_car_taxes(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD co2 (=) OBL ONE
+             ADD minco2 NOS ZERO ()
+             ADD fuel (=) OBL ONE
+             ADD taxrate NOS ZERO ()
+             ADD maxco2 NOS ZERO ()
+        )
+        OUTPUTLIST (fuel, maxco2, minco2, taxrate
+        )
+        WRAPPER (json bv_car_taxes)
+    );
+

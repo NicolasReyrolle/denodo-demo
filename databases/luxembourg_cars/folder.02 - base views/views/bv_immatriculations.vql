@@ -61,7 +61,7 @@ CREATE OR REPLACE WRAPPER JDBC bv_immatriculations_full
         eunorm = 'EUNORM' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='255', description='', sourcetypeid='12', sourcetypename='TINYTEXT')  NOT SORTABLE
     );
 
-CREATE OR REPLACE TABLE bv_immatriculations_full I18N us_pst (
+CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
         catstc:double (sourcetyperadix = '10', sourcetypesize = '22', description = '', sourcetypeid = '8'), 
         codcar:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
         libcar:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'), 
