@@ -1,6 +1,6 @@
 ﻿CREATE OR REPLACE VIEW fv_brand FOLDER = '/05 - final views'
-    PRIMARY KEY ( 'brand_code' ) AS SELECT DISTINCT iv_immatriculations.codmrq AS brand_code, iv_immatriculations.libmrq AS brand_name FROM iv_immatriculations;
+    PRIMARY KEY ( 'brand_code' ) AS SELECT brand_code AS brand_code, brand_name AS brand_name, count(*) AS count FROM dv_immatriculations GROUP BY brand_code, brand_name ORDER BY count DESC;
 
 ALTER VIEW fv_brand
- LAYOUT (iv_immatriculations = [20, 20, 200, 546]);
+ LAYOUT (dv_immatriculations = [20, 20, 200, 364]);
 

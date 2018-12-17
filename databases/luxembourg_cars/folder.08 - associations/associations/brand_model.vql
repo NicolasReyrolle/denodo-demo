@@ -2,7 +2,7 @@
 FOLDER = '/08 - associations'
     ENDPOINT produces brand PRINCIPAL (1)
     ENDPOINT built_by model (0,*)
-    ADD MAPPING brand_code=codmrq;
+    ADD MAPPING brand_code=brand_code;
 
 ALTER ASSOCIATION brand_model
  LAYOUT (brand = [180, 160, 200, 81], model = [600, 190, 200, 81]);

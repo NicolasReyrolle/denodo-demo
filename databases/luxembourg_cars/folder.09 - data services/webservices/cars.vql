@@ -15,8 +15,8 @@
             brand_name : 'text'
         ),
         VIEW model FIELDS (
-            typcom : 'text', 
-            codmrq : 'int'
+            brand_code : 'int' UNESCAPED, 
+            model : 'text' UNESCAPED
         )
     )
     ASSOCIATIONS ( brand_model )
