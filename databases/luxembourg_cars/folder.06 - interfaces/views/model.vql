@@ -1,0 +1,10 @@
+﻿CREATE OR REPLACE INTERFACE VIEW model (
+        typcom:text (sourcetyperadix = '10', sourcetypesize = '255', description = '', sourcetypeid = '12'),
+        codmrq:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Manufacturer Code', sourcetypeid = '4')
+    )
+    SET IMPLEMENTATION fv_model
+    FOLDER = '/06 - interfaces';
+
+ALTER VIEW model
+ LAYOUT (fv_model = [686, 20, 200, 66]);
+

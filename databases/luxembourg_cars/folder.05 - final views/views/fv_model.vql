@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW fv_model FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'typcom' , 'codmrq' ) AS SELECT DISTINCT dv_immatriculations.typcom AS typcom, dv_immatriculations.codmrq AS codmrq FROM dv_immatriculations;
+
+ALTER VIEW fv_model
+ LAYOUT (dv_immatriculations = [20, 20, 200, 566]);
+
