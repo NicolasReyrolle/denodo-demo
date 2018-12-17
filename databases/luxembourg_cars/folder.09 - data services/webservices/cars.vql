@@ -17,9 +17,25 @@
         VIEW model FIELDS (
             brand_code : 'int' UNESCAPED, 
             model : 'text' UNESCAPED
+        ),
+        VIEW car FIELDS (
+            brand_code : 'int', 
+            brand_name : 'text', 
+            model : 'text', 
+            first_registration : 'localdate', 
+            first_registration_lux : 'localdate', 
+            registration_date : 'localdate', 
+            mvid : 'int', 
+            libcrb : 'text', 
+            nbrcyl : 'int', 
+            pkw : 'int', 
+            cyd : 'int', 
+            infco2 : 'int', 
+            l100km : 'decimal', 
+            taxrate : 'double'
         )
     )
-    ASSOCIATIONS ( brand_model )
+    ASSOCIATIONS ( brand_model, model_car )
     OPTIONS ( NULLVALUESASEMPTYXMLELEMENTS = false ) 
     OPENAPI2 ( API_VERSION = '1.0.0' ) 
     FOLDER = '/09 - data services';

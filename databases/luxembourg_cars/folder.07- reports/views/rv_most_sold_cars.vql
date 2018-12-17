@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW rv_most_sold_cars FOLDER = '/07- reports' AS SELECT fv_brand.brand_name AS brand_name, fv_cars_agg.model AS model, fv_cars_agg.count AS count FROM fv_cars_agg AS fv_cars_agg INNER JOIN fv_brand AS fv_brand ON fv_cars_agg.brand_code = fv_brand.brand_code  ORDER BY count DESC;
+
+ALTER VIEW rv_most_sold_cars
+ LAYOUT (fv_cars_agg = [20, 20, 200, 86], fv_brand = [594, 64, 200, 86]);
+

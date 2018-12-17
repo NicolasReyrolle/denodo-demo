@@ -1,5 +1,4 @@
-﻿/databases/luxembourg_cars/folder.09 - data services/09 - data services.vql
-/databases/luxembourg_cars/folder.06 - interfaces/06 - interfaces.vql
+﻿/databases/luxembourg_cars/folder.07- reports/07- reports.vql
 /databases/luxembourg_cars/folder.05 - final views/05 - final views.vql
 /databases/luxembourg_cars/folder.04 - derived views/04 - derived views.vql
 /databases/luxembourg_cars/folder.03 - integration views/03 - integration views.vql
@@ -16,8 +15,5 @@
 /databases/luxembourg_cars/folder.01 - data sources/datasources/json/ds_car_taxes.vql
 /databases/luxembourg_cars/folder.02 - base views/views/bv_car_taxes.vql
 /databases/luxembourg_cars/folder.04 - derived views/views/dv_immatriculations.vql
+/databases/luxembourg_cars/folder.05 - final views/views/fv_cars_agg.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_brand.vql
-/databases/luxembourg_cars/folder.06 - interfaces/views/brand.vql
-/databases/luxembourg_cars/folder.05 - final views/views/fv_model.vql
-/databases/luxembourg_cars/folder.06 - interfaces/views/model.vql
-/databases/luxembourg_cars/folder.06 - interfaces/views/car.vql
