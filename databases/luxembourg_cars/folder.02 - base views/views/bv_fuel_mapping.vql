@@ -1,0 +1,27 @@
+﻿CREATE OR REPLACE WRAPPER DF bv_fuel_mapping
+    FOLDER = '/02 - base views'
+    DATASOURCENAME=ds_fuel_mapping
+    OUTPUTSCHEMA (
+        input_fuel = 'input_fuel' (OPT),
+        rest_fuel = 'rest_fuel' (OPT)
+    );
+
+CREATE OR REPLACE TABLE bv_fuel_mapping I18N us_pst (
+        input_fuel:text, 
+        rest_fuel:text
+    )
+    FOLDER = '/02 - base views'
+    PRIMARY KEY ( 'input_fuel' )
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_fuel_mapping(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD input_fuel (=,in) OPT ANY
+             ADD rest_fuel (=,in) OPT ANY
+        )
+        OUTPUTLIST (input_fuel, rest_fuel
+        )
+        WRAPPER (df bv_fuel_mapping)
+    );
+

@@ -2,5 +2,8 @@
     codmrq (description = 'Manufacturer Code'),
     libmrq (description = 'Manufacturer wording')
 )
- AS SELECT catstc, codcar, libcar, cateu, coul, induti, paypvn, codmrq, libmrq, typusi, typcom, pvrnum, pvrvar, pvrver, datcirprm, datcir_gd, datcir, dathorcir, mvid, mma, mmaens, mmaatt, mmarsf, mmaraf, i4x4, abs, asr, plaava, plaarr, plasav, plasar, pladeb, plaass, lon, lar, hau, essim, estan, estri, empmax, lares1, lares2, typmot, codcrb, libcrb, nbrcyl, pkw, cyd, infouti, infco2, l100km, infparticule, infnox, eunorm FROM bv_immatriculations;
+ AS SELECT codcar AS codcar, libcar AS libcar, cateu AS cateu, codmrq AS codmrq, libmrq AS libmrq, typcom AS typcom, datcirprm AS datcirprm, datcir_gd AS datcir_gd, datcir AS datcir, dathorcir AS dathorcir, mvid AS mvid, i4x4 AS i4x4, lon AS lon, lar AS lar, hau AS hau, essim AS essim, nbrcyl AS nbrcyl, pkw AS pkw, cyd AS cyd, cast(infco2 AS INTEGER) AS infco2, l100km AS l100km, infparticule AS infparticule, infnox AS infnox, eunorm AS eunorm, bv_immatriculations.libcrb AS libcrb, bv_immatriculations.catstc AS catstc FROM bv_immatriculations;
+
+ALTER VIEW iv_immatriculations
+ LAYOUT (bv_immatriculations = [20, 20, 200, 105]);
 

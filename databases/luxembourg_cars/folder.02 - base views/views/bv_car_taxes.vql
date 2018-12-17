@@ -12,14 +12,16 @@
     );
 
 CREATE OR REPLACE TABLE bv_car_taxes I18N us_pst (
-        co2:text (extern), 
+        co2:int, 
         minco2:int, 
         fuel:text, 
         taxrate:double, 
         maxco2:int
     )
     FOLDER = '/02 - base views'
-    CACHE OFF
+    PRIMARY KEY ( 'co2' , 'fuel' )
+    CACHE PARTIAL
+    BATCHSIZEINCACHE DEFAULT
     TIMETOLIVEINCACHE DEFAULT
     ADD SEARCHMETHOD bv_car_taxes(
         I18N us_pst

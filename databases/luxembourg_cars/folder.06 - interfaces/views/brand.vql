@@ -2,8 +2,9 @@
         brand_code:int (description = 'Manufacturer Code'),
         brand_name:text (description = 'Manufacturer wording')
     )
+    SET IMPLEMENTATION fv_brand
     FOLDER = '/06 - interfaces';
 
 ALTER VIEW brand
- LAYOUT (_dv_brands_p__p_bv_parc_auto_luxembourg_p_ds_parc_auto_luxembourg_62262410644480032691251_326324328 = [470, 94, 200, 66]);
+ LAYOUT (fv_brand = [543, 25, 200, 66]);
 
