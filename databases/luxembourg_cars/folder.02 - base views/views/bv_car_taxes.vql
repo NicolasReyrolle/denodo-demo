@@ -20,7 +20,7 @@ CREATE OR REPLACE TABLE bv_car_taxes I18N us_pst (
     )
     FOLDER = '/02 - base views'
     PRIMARY KEY ( 'co2' , 'fuel' )
-    CACHE PARTIAL
+    CACHE OFF
     BATCHSIZEINCACHE DEFAULT
     TIMETOLIVEINCACHE DEFAULT
     ADD SEARCHMETHOD bv_car_taxes(

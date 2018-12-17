@@ -13,6 +13,7 @@ CREATE OR REPLACE TABLE bv_fuel_mapping I18N us_pst (
     FOLDER = '/02 - base views'
     PRIMARY KEY ( 'input_fuel' )
     CACHE OFF
+    BATCHSIZEINCACHE DEFAULT
     TIMETOLIVEINCACHE DEFAULT
     ADD SEARCHMETHOD bv_fuel_mapping(
         I18N us_pst
