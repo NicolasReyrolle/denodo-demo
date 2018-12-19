@@ -26,11 +26,11 @@ CREATE OR REPLACE TABLE bv_car_taxes I18N us_pst (
     ADD SEARCHMETHOD bv_car_taxes(
         I18N us_pst
         CONSTRAINTS (
-             ADD co2 (=) OBL ONE
              ADD minco2 NOS ZERO ()
              ADD fuel (=) OBL ONE
              ADD taxrate NOS ZERO ()
              ADD maxco2 NOS ZERO ()
+             ADD co2 (=) OBL ONE
         )
         OUTPUTLIST (fuel, maxco2, minco2, taxrate
         )

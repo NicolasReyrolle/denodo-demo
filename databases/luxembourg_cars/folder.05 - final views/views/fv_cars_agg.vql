@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE VIEW fv_cars_agg FOLDER = '/05 - final views' AS SELECT count(*) AS count, model_id AS model_id FROM dv_immatriculations GROUP BY brand_code, model, model_id;
+﻿CREATE OR REPLACE VIEW fv_cars_agg FOLDER = '/05 - final views' AS SELECT model_id AS model_id, bodywork_code AS bodywork_code, count(*) AS count FROM dv_immatriculations GROUP BY model_id, bodywork_code;
 
 ALTER VIEW fv_cars_agg
  LAYOUT (dv_immatriculations = [20, 20, 235, 566]);
