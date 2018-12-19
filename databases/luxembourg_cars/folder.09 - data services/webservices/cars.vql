@@ -14,14 +14,8 @@
             brand_code : 'int', 
             brand_name : 'text'
         ),
-        VIEW model FIELDS (
-            brand_code : 'int' UNESCAPED, 
-            model : 'text' UNESCAPED
-        ),
         VIEW car FIELDS (
-            brand_code : 'int', 
-            brand_name : 'text', 
-            model : 'text', 
+            model_id : 'text', 
             first_registration : 'localdate', 
             first_registration_lux : 'localdate', 
             registration_date : 'localdate', 
@@ -33,6 +27,11 @@
             infco2 : 'int', 
             l100km : 'decimal', 
             taxrate : 'double'
+        ),
+        VIEW model FIELDS (
+            brand_code : 'int', 
+            model : 'text', 
+            model_id : 'text'
         )
     )
     ASSOCIATIONS ( brand_model, model_car )

@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE VIEW fv_model FOLDER = '/05 - final views'
-    PRIMARY KEY ( 'brand_code' , 'model' ) AS SELECT brand_code AS brand_code, model AS model, count(*) AS count FROM dv_immatriculations GROUP BY brand_code, model ORDER BY count DESC;
+    PRIMARY KEY ( 'model_id' ) AS SELECT model_id AS model_id, model AS model, count(*) AS count, brand_code AS brand_code FROM dv_immatriculations GROUP BY model, model_id, brand_code ORDER BY count DESC;
 
 ALTER VIEW fv_model
  LAYOUT (dv_immatriculations = [20, 20, 200, 566]);

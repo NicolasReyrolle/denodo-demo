@@ -1,7 +1,5 @@
 ﻿CREATE OR REPLACE INTERFACE VIEW car (
-        brand_code:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Manufacturer Code', sourcetypeid = '4'),
-        brand_name:text (sourcetyperadix = '10', sourcetypesize = '25', description = 'Manufacturer wording', sourcetypeid = '12'),
-        model:text (sourcetyperadix = '10', sourcetypesize = '60', description = 'Commercial model name', sourcetypeid = '12'),
+        model_id:text (sourcetyperadix = '10', sourcetypesize = '60', sourcetypeid = '12'),
         first_registration:localdate (description = 'Date of first registration'),
         first_registration_lux:localdate (description = 'Date of first registration in Luxemburg'),
         registration_date:localdate (description = 'Date of the registration to which this certificate refers'),
@@ -15,9 +13,7 @@
         taxrate:double
     )
     SET IMPLEMENTATION dv_immatriculations(
-        brand_code = brand_code,
-        brand_name = brand_name,
-        model = model,
+        model_id = model_id,
         first_registration = first_registration,
         first_registration_lux = first_registration_lux,
         registration_date = registration_date,
@@ -33,5 +29,5 @@
     FOLDER = '/06 - interfaces';
 
 ALTER VIEW car
- LAYOUT (dv_immatriculations = [580, 30, 235, 388]);
+ LAYOUT (dv_immatriculations = [580, 20, 235, 298]);
 

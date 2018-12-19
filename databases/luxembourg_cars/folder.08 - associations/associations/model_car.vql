@@ -2,9 +2,8 @@
 FOLDER = '/08 - associations'
     ENDPOINT contains model PRINCIPAL (1)
     ENDPOINT model_named car (0,*)
-    ADD MAPPING brand_code=brand_code
-    ADD MAPPING model=model;
+    ADD MAPPING model_id=model_id;
 
 ALTER ASSOCIATION model_car
- LAYOUT (model = [210, 120, 200, 81], car = [706, 87, 200, 225]);
+ LAYOUT (model = [210, 120, 200, 101], car = [706, 87, 200, 225]);
 
