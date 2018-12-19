@@ -7,5 +7,5 @@
     FOLDER = '/06 - interfaces';
 
 ALTER VIEW cars_statistics
- LAYOUT (fv_cars_agg = [598, 71, 207, 86]);
+ LAYOUT (fv_cars_agg = [598, 20, 207, 86]);
 

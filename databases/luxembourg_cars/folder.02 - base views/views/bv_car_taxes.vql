@@ -4,19 +4,19 @@
     TUPLEROOT '/JSONFile'
     OUTPUTSCHEMA (jsonfile = 'JSONFile' : REGISTER OF (
         co2 = 'CO2' : 'java.lang.String' (OBL) (DEFAULTVALUE='100') EXTERN,
-        minco2 = 'minCo2' : 'java.lang.Integer',
-        fuel = 'fuel' : 'java.lang.String' (OBL) (DEFAULTVALUE='petrol'),
         taxrate = 'taxRate' : 'java.lang.Double',
-        maxco2 = 'maxCo2' : 'java.lang.Integer'
+        fuel = 'fuel' : 'java.lang.String' (OBL) (DEFAULTVALUE='petrol'),
+        maxco2 = 'maxCo2' : 'java.lang.Integer',
+        minco2 = 'minCo2' : 'java.lang.Integer'
     )
     );
 
 CREATE OR REPLACE TABLE bv_car_taxes I18N us_pst (
         co2:int, 
-        minco2:int, 
-        fuel:text, 
         taxrate:double, 
-        maxco2:int
+        fuel:text, 
+        maxco2:int, 
+        minco2:int
     )
     FOLDER = '/02 - base views'
     PRIMARY KEY ( 'co2' , 'fuel' )
@@ -26,11 +26,11 @@ CREATE OR REPLACE TABLE bv_car_taxes I18N us_pst (
     ADD SEARCHMETHOD bv_car_taxes(
         I18N us_pst
         CONSTRAINTS (
-             ADD minco2 NOS ZERO ()
-             ADD fuel (=) OBL ONE
-             ADD taxrate NOS ZERO ()
-             ADD maxco2 NOS ZERO ()
              ADD co2 (=) OBL ONE
+             ADD taxrate NOS ZERO ()
+             ADD fuel (=) OBL ONE
+             ADD maxco2 NOS ZERO ()
+             ADD minco2 NOS ZERO ()
         )
         OUTPUTLIST (fuel, maxco2, minco2, taxrate
         )

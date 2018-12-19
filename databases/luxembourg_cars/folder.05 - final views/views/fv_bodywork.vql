@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE VIEW fv_bodywork FOLDER = '/05 - final views'
-    PRIMARY KEY ( 'bodywork_code' ) AS SELECT bodywork_code AS bodywork_code, bodywork_name AS bodywork_name, count(*) AS count FROM dv_immatriculations GROUP BY bodywork_code, bodywork_name ORDER BY count DESC;
+    PRIMARY KEY ( 'bodywork_code' ) AS SELECT DISTINCT dv_immatriculations.bodywork_code AS bodywork_code, dv_immatriculations.bodywork_name AS bodywork_name FROM dv_immatriculations;
 
 ALTER VIEW fv_bodywork
  LAYOUT (dv_immatriculations = [20, 20, 235, 566]);

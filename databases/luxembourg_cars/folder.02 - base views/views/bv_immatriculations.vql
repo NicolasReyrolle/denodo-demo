@@ -58,7 +58,8 @@ CREATE OR REPLACE WRAPPER JDBC bv_immatriculations
         l100km = 'l100km' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='3', sourcetyperadix='10', sourcetypesize='5', description='fuel consumption in l/100km (Combined)', sourcetypeid='3', sourcetypename='DECIMAL')  SORTABLE,
         infparticule = 'infparticule' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='5', sourcetyperadix='10', sourcetypesize='7', description='Exhaust emissions particulates (mass in g/km)', sourcetypeid='3', sourcetypename='DECIMAL')  SORTABLE,
         infnox = 'infnox' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='5', sourcetyperadix='10', sourcetypesize='9', description='Exhaust emissions Nox in g/km', sourcetypeid='3', sourcetypename='DECIMAL')  SORTABLE,
-        eunorm = 'eunorm' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='15', description='Exhaust emission level', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE
+        eunorm = 'eunorm' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='15', description='Exhaust emission level', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        model_id = 'model_id' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='32', description='Model identifier', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE
     );
 
 CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
@@ -115,7 +116,8 @@ CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
         l100km:decimal (sourcetypedecimals = '3', sourcetyperadix = '10', sourcetypesize = '5', description = 'fuel consumption in l/100km (Combined)', sourcetypeid = '3'), 
         infparticule:decimal (sourcetypedecimals = '5', sourcetyperadix = '10', sourcetypesize = '7', description = 'Exhaust emissions particulates (mass in g/km)', sourcetypeid = '3'), 
         infnox:decimal (sourcetypedecimals = '5', sourcetyperadix = '10', sourcetypesize = '9', description = 'Exhaust emissions Nox in g/km', sourcetypeid = '3'), 
-        eunorm:text (sourcetyperadix = '10', sourcetypesize = '15', description = 'Exhaust emission level', sourcetypeid = '12')
+        eunorm:text (sourcetyperadix = '10', sourcetypesize = '15', description = 'Exhaust emission level', sourcetypeid = '12'), 
+        model_id:text (sourcetyperadix = '10', sourcetypesize = '32', description = 'Model identifier', sourcetypeid = '12')
     )
     FOLDER = '/02 - base views'
     CACHE OFF
@@ -178,8 +180,9 @@ CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
              ADD infparticule (any) OPT ANY
              ADD infnox (any) OPT ANY
              ADD eunorm (any) OPT ANY
+             ADD model_id (any) OPT ANY
         )
-        OUTPUTLIST (abs, asr, cateu, catstc, codcar, codcrb, codmrq, coul, cyd, datcir, datcir_gd, datcirprm, dathorcir, empmax, essim, estan, estri, eunorm, hau, i4x4, induti, infco2, infnox, infouti, infparticule, l100km, lar, lares1, lares2, libcar, libcrb, libmrq, lon, mma, mmaatt, mmaens, mmaraf, mmarsf, mvid, nbrcyl, paypvn, pkw, plaarr, plaass, plaava, pladeb, plasar, plasav, pvrnum, pvrvar, pvrver, typcom, typmot, typusi
+        OUTPUTLIST (abs, asr, cateu, catstc, codcar, codcrb, codmrq, coul, cyd, datcir, datcir_gd, datcirprm, dathorcir, empmax, essim, estan, estri, eunorm, hau, i4x4, induti, infco2, infnox, infouti, infparticule, l100km, lar, lares1, lares2, libcar, libcrb, libmrq, lon, mma, mmaatt, mmaens, mmaraf, mmarsf, model_id, mvid, nbrcyl, paypvn, pkw, plaarr, plaass, plaava, pladeb, plasar, plasav, pvrnum, pvrvar, pvrver, typcom, typmot, typusi
         )
         WRAPPER (jdbc bv_immatriculations)
     );

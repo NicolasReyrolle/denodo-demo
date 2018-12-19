@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE INTERFACE VIEW car (
-        model_id:text (sourcetyperadix = '10', sourcetypesize = '60', sourcetypeid = '12'),
+        model_id:text (sourcetyperadix = '10', sourcetypesize = '32', sourcetypeid = '12'),
         first_registration:localdate (description = 'Date of first registration'),
         first_registration_lux:localdate (description = 'Date of first registration in Luxemburg'),
         registration_date:localdate (description = 'Date of the registration to which this certificate refers'),
@@ -29,5 +29,5 @@
     FOLDER = '/06 - interfaces';
 
 ALTER VIEW car
- LAYOUT (dv_immatriculations = [580, 20, 235, 298]);
+ LAYOUT (dv_immatriculations = [600, 20, 235, 388]);
 

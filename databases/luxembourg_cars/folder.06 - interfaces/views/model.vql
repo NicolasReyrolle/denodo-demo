@@ -3,13 +3,9 @@
         brand_code:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Manufacturer Code', sourcetypeid = '4'),
         model:text (sourcetyperadix = '10', sourcetypesize = '60', description = 'Commercial model name', sourcetypeid = '12')
     )
-    SET IMPLEMENTATION fv_model(
-        model_id = model_id,
-        brand_code = brand_code,
-        model = model    
-)
+    SET IMPLEMENTATION fv_model
     FOLDER = '/06 - interfaces';
 
 ALTER VIEW model
- LAYOUT (fv_model = [686, 20, 200, 106]);
+ LAYOUT (fv_model = [686, 20, 200, 86]);
 

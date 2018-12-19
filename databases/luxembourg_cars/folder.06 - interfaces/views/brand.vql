@@ -6,5 +6,5 @@
     FOLDER = '/06 - interfaces';
 
 ALTER VIEW brand
- LAYOUT (fv_brand = [543, 25, 200, 66]);
+ LAYOUT (fv_brand = [543, 20, 200, 66]);
 

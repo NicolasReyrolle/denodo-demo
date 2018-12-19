@@ -5,5 +5,5 @@ FOLDER = '/08 - associations'
     ADD MAPPING brand_code=brand_code;
 
 ALTER ASSOCIATION brand_model
- LAYOUT (brand = [180, 160, 200, 81], model = [600, 190, 200, 81]);
+ LAYOUT (brand = [180, 160, 200, 81], model = [600, 190, 200, 85]);
 
