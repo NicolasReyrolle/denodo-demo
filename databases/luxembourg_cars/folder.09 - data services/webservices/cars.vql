@@ -32,9 +32,14 @@
             brand_code : 'int', 
             model : 'text', 
             model_id : 'text'
+        ),
+        VIEW cars_statistics FIELDS (
+            model_id : 'text', 
+            bodywork_code : 'text', 
+            count : 'long'
         )
     )
-    ASSOCIATIONS ( brand_model, model_car )
+    ASSOCIATIONS ( brand_model, model_car, model_cars_statistics )
     OPTIONS ( NULLVALUESASEMPTYXMLELEMENTS = false ) 
     OPENAPI2 ( API_VERSION = '1.0.0' ) 
     FOLDER = '/09 - data services';
