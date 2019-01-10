@@ -8,6 +8,8 @@ tavern = "*"
 
 [packages]
 flask-restful = "*"
+tavern = "*"
+pyyaml = "*"
 
 [scripts]
 start = "python endpoint/endpoint.py"
