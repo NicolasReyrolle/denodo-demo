@@ -1,5 +1,5 @@
-﻿CREATE OR REPLACE VIEW rv_most_sold_cars FOLDER = '/07- reports' AS SELECT fv_brand.brand_name AS brand_name, fv_cars_agg.model_id AS model, fv_cars_agg.count AS count FROM fv_cars_agg AS fv_cars_agg INNER JOIN fv_model as fv_model ON fv_cars_agg.model_id = fv_model.model_id INNER JOIN fv_brand AS fv_brand ON fv_model.brand_code = fv_brand.brand_code  ORDER BY count DESC;
+﻿CREATE OR REPLACE VIEW rv_most_sold_cars FOLDER = '/07- reports' AS SELECT fv_brand.brand_name AS brand_name, fv_cars_agg.model_id AS model, fv_cars_agg.count AS count, fv_current_period.period AS period FROM ((fv_cars_agg AS fv_cars_agg INNER JOIN fv_model AS fv_model ON fv_cars_agg.model_id = fv_model.model_id ) INNER JOIN fv_brand AS fv_brand ON fv_model.brand_code = fv_brand.brand_code ) INNER JOIN fv_current_period AS fv_current_period ON fv_cars_agg.period = fv_current_period.period  ORDER BY count DESC;
 
 ALTER VIEW rv_most_sold_cars
- LAYOUT (fv_cars_agg = [20, 20, 200, 86], fv_brand = [594, 64, 200, 86], fv_model = [80, 64, 200, 86]);
+ LAYOUT (fv_cars_agg = [390, 30, 200, 105], fv_model = [760, 30, 200, 86], fv_brand = [1060, 30, 200, 66], fv_current_period = [70, 30, 200, 46]);
 

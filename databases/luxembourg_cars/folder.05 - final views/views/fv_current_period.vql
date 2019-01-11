@@ -1,4 +1,5 @@
-﻿CREATE OR REPLACE VIEW fv_current_period FOLDER = '/05 - final views' AS SELECT max(period) AS period FROM dv_immatriculations;
+﻿CREATE OR REPLACE VIEW fv_current_period FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'period' ) AS SELECT max(period) AS period FROM dv_immatriculations;
 
 ALTER VIEW fv_current_period
  LAYOUT (dv_immatriculations = [20, 20, 235, 606]);
