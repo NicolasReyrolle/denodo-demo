@@ -5,64 +5,70 @@ CREATE OR REPLACE WRAPPER JDBC bv_immatriculations
     CATALOGNAME='${databases.luxembourg_cars.folder.02 - base views.views.jdbc.bv_immatriculations.CATALOGNAME}' 
     RELATIONNAME='immatriculations' 
     OUTPUTSCHEMA (
-        catstc = 'catstc' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Statec category code', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
-        codcar = 'codcar' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='4', description='European Bodywork Code', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
-        libcar = 'libcar' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='30', description='Bodywork wording', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
-        cateu = 'cateu' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='3', description='European Category Code', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        coul = 'coul' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='25', description='Color', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
-        induti = 'induti' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='1', description='Indication of use', sourcetypeid='1', sourcetypename='CHAR')  NOT NULL SORTABLE,
-        paypvn = 'paypvn' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='4', description='Country of origin code', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        codmrq = 'codmrq' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Manufacturer code', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
-        libmrq = 'libmrq' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='25', description='Manufacturer wording', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
-        typusi = 'typusi' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='80', description='Type', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        typcom = 'typcom' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='60', description='Commercial model name', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        pvrnum = 'pvrnum' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='25', description='EC type approval number', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
-        pvrvar = 'pvrvar' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='100', description='Variant', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
-        pvrver = 'pvrver' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='50', description='Version', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        datcirprm = 'datcirprm' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Date of first registration', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        datcir_gd = 'datcir_gd' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Date of first registration in Luxemburg', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
-        datcir = 'datcir' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Date of the registration to which this certificate refers', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
-        dathorcir = 'dathorcir' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Off road declaration date', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        mvid = 'mvid' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Mass in running order', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
-        mma = 'mma' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='technically permissible maximum laden mass', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        mmaens = 'mmaens' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Technically permissible maximum mass of the combination', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        mmaatt = 'mmaatt' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Technically permissible maximum static vertical mass at the coupling point', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        mmarsf = 'mmarsf' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Technically permissible maximum towable mass in case of brakeless trailer', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        mmaraf = 'mmaraf' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Technically permissible maximum towable mass in case of centre-axle trailer', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        period = 'PERIOD' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='6', description='Data period (YYYYMM)', sourcetypeid='1', sourcetypename='CHAR')  NOT NULL SORTABLE,
+        catstc = 'CATSTC' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Statec category code', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
+        codcar = 'CODCAR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='4', description='European Bodywork Code', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
+        libcar = 'LIBCAR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='30', description='Bodywork wording', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
+        cateu = 'CATEU' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='3', description='European Category Code', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        coul = 'COUL' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='25', description='Color', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
+        induti = 'INDUTI' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='1', description='Indication of use', sourcetypeid='1', sourcetypename='CHAR')  NOT NULL SORTABLE,
+        paypvn = 'PAYPVN' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='4', description='Country of origin code', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        codmrq = 'CODMRQ' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Manufacturer code', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
+        libmrq = 'LIBMRQ' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='25', description='Manufacturer wording', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
+        typusi = 'TYPUSI' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='80', description='Type', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        typcom = 'TYPCOM' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='60', description='Commercial model name', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        pvrnum = 'PVRNUM' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='25', description='EC type approval number', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
+        pvrvar = 'PVRVAR' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='100', description='Variant', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE,
+        pvrver = 'PVRVER' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='50', description='Version', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        datcirprm = 'DATCIRPRM' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Date of first registration', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        datcir_gd = 'DATCIR_GD' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Date of first registration in Luxemburg', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
+        datcir = 'DATCIR' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Date of the registration to which this certificate refers', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
+        dathorcir = 'DATHORCIR' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Off road declaration date', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        mvid = 'MVID' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Mass in running order', sourcetypeid='4', sourcetypename='INT')  NOT NULL SORTABLE,
+        mma = 'MMA' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='technically permissible maximum laden mass', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        mmaens = 'MMAENS' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Technically permissible maximum mass of the combination', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        mmaatt = 'MMAATT' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Technically permissible maximum static vertical mass at the coupling point', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        mmarsf = 'MMARSF' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Technically permissible maximum towable mass in case of brakeless trailer', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        mmaraf = 'MMARAF' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Technically permissible maximum towable mass in case of centre-axle trailer', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
         i4x4 = 'I4X4' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='3', description='4x4 Indicator', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        abs = 'abs' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='ABS Indicator', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        asr = 'asr' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='ASR Indicator', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        plaava = 'plaava' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of front seats', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        plaarr = 'plaarr' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of back seats', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        plasav = 'plasav' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of specific front seats', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        plasar = 'plasar' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of specific back seats', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        pladeb = 'pladeb' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of standing places', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        plaass = 'plaass' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of sitting places', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        lon = 'lon' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Length', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        lar = 'lar' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Width', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        hau = 'hau' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Height', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        essim = 'essim' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of simple axles', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        estan = 'estan' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of tandem axles', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        estri = 'estri' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of tridem axles', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        empmax = 'empmax' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Wheelbase', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        lares1 = 'lares1' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Axle(s) track 1', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        lares2 = 'lares2' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Axle(s) track 2', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        typmot = 'typmot' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='40', description='Engine code as marked on the engine', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        codcrb = 'codcrb' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Fuel code', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        libcrb = 'libcrb' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='40', description='Fuel description', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        nbrcyl = 'nbrcyl' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of cylinders', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        pkw = 'pkw' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Maximum net power', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        cyd = 'cyd' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Engine capacity', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        infouti = 'infouti' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='3', description='User information', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        infco2 = 'infco2' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='CO2 emissions in g/km (Combined)', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
-        l100km = 'l100km' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='3', sourcetyperadix='10', sourcetypesize='5', description='fuel consumption in l/100km (Combined)', sourcetypeid='3', sourcetypename='DECIMAL')  SORTABLE,
-        infparticule = 'infparticule' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='5', sourcetyperadix='10', sourcetypesize='7', description='Exhaust emissions particulates (mass in g/km)', sourcetypeid='3', sourcetypename='DECIMAL')  SORTABLE,
-        infnox = 'infnox' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='5', sourcetyperadix='10', sourcetypesize='9', description='Exhaust emissions Nox in g/km', sourcetypeid='3', sourcetypename='DECIMAL')  SORTABLE,
-        eunorm = 'eunorm' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='15', description='Exhaust emission level', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
-        model_id = 'model_id' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='32', description='Model identifier', sourcetypeid='12', sourcetypename='VARCHAR')  NOT NULL SORTABLE
-    );
+        abs = 'ABS' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='ABS Indicator', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        asr = 'ASR' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='ASR Indicator', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        plaava = 'PLAAVA' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of front seats', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        plaarr = 'PLAARR' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of back seats', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        plasav = 'PLASAV' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of specific front seats', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        plasar = 'PLASAR' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of specific back seats', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        pladeb = 'PLADEB' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of standing places', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        plaass = 'PLAASS' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of sitting places', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        lar = 'LAR' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Width', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        lon = 'LON' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Length', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        hau = 'HAU' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Height', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        essim = 'ESSIM' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of simple axles', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        estan = 'ESTAN' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of tandem axles', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        estri = 'ESTRI' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of tridem axles', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        empmax = 'EMPMAX' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Wheelbase', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        lares1 = 'LARES1' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Axle(s) track 1', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        lares2 = 'LARES2' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Axle(s) track 2', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        typmot = 'TYPMOT' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='40', description='Engine code as marked on the engine', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        codcrb = 'CODCRB' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Fuel code', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        libcrb = 'LIBCRB' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='40', description='Fuel description', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        nbrcyl = 'NBRCYL' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Number of cylinders', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        pkw = 'PKW' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Maximum net power', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        cyd = 'CYD' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='Engine capacity', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        infouti = 'INFOUTI' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='3', description='User information', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        infco2 = 'INFCO2' :'java.lang.Integer' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='10', description='CO2 emissions in g/km (Combined)', sourcetypeid='4', sourcetypename='INT')  SORTABLE,
+        l100km = 'L100KM' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='3', sourcetyperadix='10', sourcetypesize='5', description='fuel consumption in l/100km (Combined)', sourcetypeid='3', sourcetypename='DECIMAL')  SORTABLE,
+        infparticule = 'INFPARTICULE' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='5', sourcetyperadix='10', sourcetypesize='7', description='Exhaust emissions particulates (mass in g/km)', sourcetypeid='3', sourcetypename='DECIMAL')  SORTABLE,
+        infnox = 'INFNOX' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='5', sourcetyperadix='10', sourcetypesize='9', description='Exhaust emissions Nox in g/km', sourcetypeid='3', sourcetypename='DECIMAL')  SORTABLE,
+        eunorm = 'EUNORM' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='15', description='Exhaust emission level', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE,
+        model_id = 'MODEL_ID' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='32', description='Model identifier', sourcetypeid='12', sourcetypename='VARCHAR')  SORTABLE
+    )
+    INDEX 'idx_bodywork' OTHER ( 'CODCAR' , 'LIBCAR' )
+    INDEX 'idx_brand' OTHER ( 'CODMRQ' , 'LIBMRQ' )
+    INDEX 'idx_model' OTHER ( 'MODEL_ID' , 'CODMRQ' , 'TYPCOM' )
+    INDEX 'idx_period' OTHER ( 'PERIOD' );
 
 CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
+        period:text (sourcetyperadix = '10', sourcetypesize = '6', description = 'Data period (YYYYMM)', sourcetypeid = '1'), 
         catstc:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Statec category code', sourcetypeid = '4'), 
         codcar:text (sourcetyperadix = '10', sourcetypesize = '4', description = 'European Bodywork Code', sourcetypeid = '12'), 
         libcar:text (sourcetyperadix = '10', sourcetypesize = '30', description = 'Bodywork wording', sourcetypeid = '12'), 
@@ -96,8 +102,8 @@ CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
         plasar:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Number of specific back seats', sourcetypeid = '4'), 
         pladeb:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Number of standing places', sourcetypeid = '4'), 
         plaass:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Number of sitting places', sourcetypeid = '4'), 
-        lon:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Length', sourcetypeid = '4'), 
         lar:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Width', sourcetypeid = '4'), 
+        lon:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Length', sourcetypeid = '4'), 
         hau:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Height', sourcetypeid = '4'), 
         essim:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Number of simple axles', sourcetypeid = '4'), 
         estan:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Number of tandem axles', sourcetypeid = '4'), 
@@ -126,6 +132,7 @@ CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
     ADD SEARCHMETHOD bv_immatriculations(
         I18N us_pst
         CONSTRAINTS (
+             ADD period (any) OPT ANY
              ADD catstc (any) OPT ANY
              ADD codcar (any) OPT ANY
              ADD libcar (any) OPT ANY
@@ -159,8 +166,8 @@ CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
              ADD plasar (any) OPT ANY
              ADD pladeb (any) OPT ANY
              ADD plaass (any) OPT ANY
-             ADD lon (any) OPT ANY
              ADD lar (any) OPT ANY
+             ADD lon (any) OPT ANY
              ADD hau (any) OPT ANY
              ADD essim (any) OPT ANY
              ADD estan (any) OPT ANY
@@ -182,7 +189,7 @@ CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
              ADD eunorm (any) OPT ANY
              ADD model_id (any) OPT ANY
         )
-        OUTPUTLIST (abs, asr, cateu, catstc, codcar, codcrb, codmrq, coul, cyd, datcir, datcir_gd, datcirprm, dathorcir, empmax, essim, estan, estri, eunorm, hau, i4x4, induti, infco2, infnox, infouti, infparticule, l100km, lar, lares1, lares2, libcar, libcrb, libmrq, lon, mma, mmaatt, mmaens, mmaraf, mmarsf, model_id, mvid, nbrcyl, paypvn, pkw, plaarr, plaass, plaava, pladeb, plasar, plasav, pvrnum, pvrvar, pvrver, typcom, typmot, typusi
+        OUTPUTLIST (abs, asr, cateu, catstc, codcar, codcrb, codmrq, coul, cyd, datcir, datcir_gd, datcirprm, dathorcir, empmax, essim, estan, estri, eunorm, hau, i4x4, induti, infco2, infnox, infouti, infparticule, l100km, lar, lares1, lares2, libcar, libcrb, libmrq, lon, mma, mmaatt, mmaens, mmaraf, mmarsf, model_id, mvid, nbrcyl, paypvn, period, pkw, plaarr, plaass, plaava, pladeb, plasar, plasav, pvrnum, pvrvar, pvrver, typcom, typmot, typusi
         )
         WRAPPER (jdbc bv_immatriculations)
     );
