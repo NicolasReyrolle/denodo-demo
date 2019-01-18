@@ -149,7 +149,7 @@ LOAD XML LOCAL INFILE 'Parc_Automobile_201710.xml'
 -- Final updates to get clean data
 update immatriculations
   set
-    model_id = md5(concat(codmrq, coalesce(typcom, codmrq)))
+    model_id = md5(concat(codmrq, coalesce(typcom, concat(libmrq, libcar))))
 ;
 
 CREATE INDEX idx_bodywork   ON immatriculations(codcar, libcar);
