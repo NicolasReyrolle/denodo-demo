@@ -3,6 +3,7 @@ CREATE OR REPLACE WRAPPER JDBC bv_immatriculations
     FOLDER = '/02 - base views'
     DATASOURCENAME=ds_immatriculations_full
     CATALOGNAME='${databases.luxembourg_cars.folder.02 - base views.views.jdbc.bv_immatriculations.CATALOGNAME}' 
+    SCHEMANAME='${databases.luxembourg_cars.folder.02 - base views.views.jdbc.bv_immatriculations.SCHEMANAME}' 
     RELATIONNAME='immatriculations' 
     OUTPUTSCHEMA (
         period = 'PERIOD' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='6', description='Data period (YYYYMM)', sourcetypeid='1', sourcetypename='CHAR')  NOT NULL SORTABLE,

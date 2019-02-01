@@ -1,13 +1,13 @@
 ﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
 CREATE OR REPLACE DATASOURCE JDBC ds_immatriculations_full
     FOLDER = '/01 - data sources'
-    DRIVERCLASSNAME = 'com.mysql.jdbc.Driver'
+    DRIVERCLASSNAME = 'com.microsoft.sqlserver.jdbc.SQLServerDriver'
     DATABASEURI = '${databases.luxembourg_cars.folder.01 - data sources.datasources.jdbc.ds_immatriculations_full.DATABASEURI}'
     USERNAME = '${databases.luxembourg_cars.folder.01 - data sources.datasources.jdbc.ds_immatriculations_full.USERNAME}'
     USERPASSWORD = '${databases.luxembourg_cars.folder.01 - data sources.datasources.jdbc.ds_immatriculations_full.USERPASSWORD}' ${databases.luxembourg_cars.folder.01 - data sources.datasources.jdbc.ds_immatriculations_full.USERPASSWORD.ENCRYPTED}
-    CLASSPATH = 'mysql-5'
-    DATABASENAME = 'mysql'
-    DATABASEVERSION = '5'
+    CLASSPATH = 'mssql-jdbc-6.x'
+    DATABASENAME = 'sqlserver'
+    DATABASEVERSION = '2016'
     FETCHSIZE = 1000
     VALIDATIONQUERY = 'Select 1'
     INITIALSIZE = 4
@@ -24,13 +24,11 @@ CREATE OR REPLACE DATASOURCE JDBC ds_immatriculations_full
     POOLPREPAREDSTATEMENTS = false
     MAXSLEEPINGPS = 4
     INITIALCAPACITYPS = 8
-    PROPERTIES ('vdp.streamRows'='yes')
     DATA_LOAD_CONFIGURATION (
-        USE_FOR_QUERY_OPTIMIZATION = DATA_MOVEMENT
-        BATCHINSERTSIZE = 200
-        USEEXTERNALTABLES ( 
-            ONMOVEREAD = false,
-            ONMOVEWRITE = true
-        )
+        BATCHINSERTSIZE = 1000
+    )
+    SOURCECONFIGURATION (
+        blocksize = 16,
+        multiblockreadcount = 4
     );
 
