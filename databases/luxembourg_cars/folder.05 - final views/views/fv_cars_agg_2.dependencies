@@ -1,0 +1,16 @@
+﻿/databases/luxembourg_cars/folder.05 - final views/05 - final views.vql
+/databases/luxembourg_cars/folder.04 - derived views/04 - derived views.vql
+/databases/luxembourg_cars/folder.03 - integration views/03 - integration views.vql
+/databases/luxembourg_cars/folder.02 - base views/02 - base views.vql
+/databases/luxembourg_cars/folder.01 - data sources/01 - data sources.vql
+/databases/luxembourg_cars/folder.01 - data sources/datasources/jdbc/ds_immatriculations_full.vql
+/databases/luxembourg_cars/folder.02 - base views/views/bv_immatriculations.vql
+/databases/luxembourg_cars/folder.03 - integration views/views/iv_immatriculations.vql
+/databases/luxembourg_cars/folder.01 - data sources/datasources/json/ds_statec.vql
+/databases/luxembourg_cars/folder.02 - base views/views/bv_statec.vql
+/databases/luxembourg_cars/folder.03 - integration views/views/iv_statec.vql
+/databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_fuel_mapping.vql
+/databases/luxembourg_cars/folder.02 - base views/views/bv_fuel_mapping.vql
+/databases/luxembourg_cars/folder.01 - data sources/datasources/json/ds_car_taxes.vql
+/databases/luxembourg_cars/folder.02 - base views/views/bv_car_taxes.vql
+/databases/luxembourg_cars/folder.04 - derived views/views/dv_immatriculations.vql
