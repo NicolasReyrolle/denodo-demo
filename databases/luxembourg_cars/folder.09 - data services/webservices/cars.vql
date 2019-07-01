@@ -16,9 +16,6 @@
         ),
         VIEW car FIELDS (
             model_id : 'text', 
-            first_registration : 'localdate', 
-            first_registration_lux : 'localdate', 
-            registration_date : 'localdate', 
             mvid : 'int', 
             libcrb : 'text', 
             nbrcyl : 'int', 

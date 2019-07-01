@@ -3,7 +3,8 @@
         brand_name:text (description = 'Manufacturer wording')
     )
     SET IMPLEMENTATION fv_brand
-    FOLDER = '/06 - interfaces';
+    FOLDER = '/06 - interfaces'
+    DESCRIPTION = 'Car brands' ;
 
 ALTER VIEW brand
  LAYOUT (fv_brand = [543, 20, 200, 66]);
