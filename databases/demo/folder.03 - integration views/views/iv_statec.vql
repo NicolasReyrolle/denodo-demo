@@ -1,6 +1,0 @@
-﻿CREATE OR REPLACE VIEW iv_statec FOLDER = '/03 - integration views'
-    PRIMARY KEY ( 'code' ) AS SELECT code AS code, englishlabel_0 AS label_en, frenchlabel_0 AS label_fr FROM FLATTEN bv_statec AS v ( v.jsonarray);
-
-ALTER VIEW iv_statec
- LAYOUT (bv_statec = [20, 20, 278, 106]);
-

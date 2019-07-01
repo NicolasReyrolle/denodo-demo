@@ -1,9 +1,0 @@
-﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
-CREATE OR REPLACE DATASOURCE DF ds_fuel_mapping
-    FOLDER = '/01 - data sources'
-    IGNOREMATCHINGERRORS = FALSE
-    ROUTE LOCAL 'LocalConnection' '${databases.demo.folder.01 - data sources.datasources.df.ds_fuel_mapping.ROUTE.LOCAL.PATH}'
-    COLUMNDELIMITER = ';'
-    ENDOFLINEDELIMITER = '\n'
-    HEADER = TRUE;
-

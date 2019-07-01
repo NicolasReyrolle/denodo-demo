@@ -1,9 +1,0 @@
-﻿CREATE OR REPLACE ASSOCIATION bodywork_cars_statistics REFERENTIAL CONSTRAINT 
-FOLDER = '/08 - associations'
-    ENDPOINT has_cars bodywork (0,*)
-    ENDPOINT has_bodywork cars_statistics PRINCIPAL (1)
-    ADD MAPPING bodywork_code=bodywork_code;
-
-ALTER ASSOCIATION bodywork_cars_statistics
- LAYOUT (bodywork = [200, 40, 200, 121], cars_statistics = [580, 30, 200, 121]);
-

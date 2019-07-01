@@ -1,6 +1,0 @@
-﻿CREATE OR REPLACE VIEW fv_cars_agg FOLDER = '/05 - final views'
-    PRIMARY KEY ( 'period' , 'model_id' , 'bodywork_code' ) AS SELECT period AS period, model_id AS model_id, bodywork_code AS bodywork_code, count(*) AS count FROM dv_immatriculations GROUP BY model_id, bodywork_code, period;
-
-ALTER VIEW fv_cars_agg
- LAYOUT (dv_immatriculations = [20, 20, 235, 566]);
-
