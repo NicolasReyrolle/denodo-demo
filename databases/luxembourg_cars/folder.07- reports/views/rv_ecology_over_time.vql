@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW rv_ecology_over_time FOLDER = '/07- reports'
+    PRIMARY KEY ( 'period' ) AS SELECT period AS period, avg(infco2) AS avg_co2, avg(nbrcyl) AS avg_cylinder_count FROM fact_car_details GROUP BY period;
+
+ALTER VIEW rv_ecology_over_time
+ LAYOUT (fact_car_details = [20, 20, 200, 226]);
+
