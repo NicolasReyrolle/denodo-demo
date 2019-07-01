@@ -1,0 +1,9 @@
+﻿CREATE OR REPLACE INTERFACE VIEW current_period (
+        period:text
+    )
+    SET IMPLEMENTATION fv_current_period
+    FOLDER = '/06 - interfaces';
+
+ALTER VIEW current_period
+ LAYOUT (fv_current_period = [480, 72, 200, 46]);
+

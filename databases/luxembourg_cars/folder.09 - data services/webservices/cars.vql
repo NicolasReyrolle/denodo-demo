@@ -37,9 +37,15 @@
             model_id : 'text', 
             bodywork_code : 'text', 
             count : 'long'
+        ),
+        VIEW bodywork FIELDS (
+            bodywork_code : 'text', 
+            bodywork_name : 'text', 
+            bodywork_category : 'text', 
+            bodywork_type : 'text'
         )
     )
-    ASSOCIATIONS ( brand_model, model_car, model_cars_statistics )
+    ASSOCIATIONS ( brand_model, model_car, model_cars_statistics, bodywork_cars_statistics )
     OPTIONS ( NULLVALUESASEMPTYXMLELEMENTS = false ) 
     OPENAPI2 ( API_VERSION = '1.0.0' ) 
     FOLDER = '/09 - data services';

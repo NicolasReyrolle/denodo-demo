@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW iv_bodywork FOLDER = '/03 - integration views' AS SELECT leftpad(bv_code_ec_codcar.code, 2, '0') AS code, bv_code_ec_codcar.libelle AS label, bv_code_ec_codcar.category AS category, bv_code_ec_codcar.type AS type FROM bv_code_ec_codcar;
+
+ALTER VIEW iv_bodywork
+ LAYOUT (bv_code_ec_codcar = [20, 20, 200, 106]);
+
