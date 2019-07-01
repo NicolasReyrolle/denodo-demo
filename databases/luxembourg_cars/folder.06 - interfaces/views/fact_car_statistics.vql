@@ -5,7 +5,8 @@
         count:long
     )
     SET IMPLEMENTATION fv_cars_agg
-    FOLDER = '/06 - interfaces';
+    FOLDER = '/06 - interfaces'
+    DESCRIPTION = 'Count of cars by various dimensions' ;
 
 ALTER VIEW fact_car_statistics
  LAYOUT (fv_cars_agg = [598, 20, 207, 106]);

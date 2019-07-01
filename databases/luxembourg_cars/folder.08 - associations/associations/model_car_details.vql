@@ -1,0 +1,9 @@
+﻿CREATE OR REPLACE ASSOCIATION model_car_details REFERENTIAL CONSTRAINT 
+FOLDER = '/08 - associations'
+    ENDPOINT contains model PRINCIPAL (1)
+    ENDPOINT model_named fact_car_details (0,*)
+    ADD MAPPING model_id=model_id;
+
+ALTER ASSOCIATION model_car_details
+ LAYOUT (model = [210, 120, 200, 101], fact_car_details = [706, 87, 200, 221]);
+

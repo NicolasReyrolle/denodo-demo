@@ -4,7 +4,8 @@
         model:text (sourcetyperadix = '10', sourcetypesize = '60', description = 'Commercial model name', sourcetypeid = '12')
     )
     SET IMPLEMENTATION fv_model
-    FOLDER = '/06 - interfaces';
+    FOLDER = '/06 - interfaces'
+    DESCRIPTION = 'Car models' ;
 
 ALTER VIEW model
  LAYOUT (fv_model = [686, 20, 200, 86]);

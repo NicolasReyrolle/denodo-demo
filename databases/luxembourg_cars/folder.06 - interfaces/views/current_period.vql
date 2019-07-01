@@ -2,8 +2,9 @@
         period:text
     )
     SET IMPLEMENTATION fv_current_period
-    FOLDER = '/06 - interfaces';
+    FOLDER = '/06 - interfaces'
+    DESCRIPTION = 'Last available data period' ;
 
 ALTER VIEW current_period
- LAYOUT (fv_current_period = [480, 72, 200, 46]);
+ LAYOUT (fv_current_period = [480, 20, 200, 46]);
 

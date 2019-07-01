@@ -1,4 +1,5 @@
-﻿CREATE OR REPLACE INTERFACE VIEW car (
+﻿CREATE OR REPLACE INTERFACE VIEW fact_car_details (
+        period:text,
         model_id:text (sourcetyperadix = '10', sourcetypesize = '32', sourcetypeid = '12'),
         mvid:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
         libcrb:text (sourcetyperadix = '10', sourcetypesize = '40', description = 'Fuel description', sourcetypeid = '12'),
@@ -10,6 +11,7 @@
         taxrate:double
     )
     SET IMPLEMENTATION dv_immatriculations(
+        period = period,
         model_id = model_id,
         mvid = mvid,
         libcrb = libcrb,
@@ -20,8 +22,9 @@
         l100km = l100km,
         taxrate = taxrate    
 )
-    FOLDER = '/06 - interfaces';
+    FOLDER = '/06 - interfaces'
+    DESCRIPTION = 'Car details' ;
 
-ALTER VIEW car
- LAYOUT (dv_immatriculations = [600, 20, 235, 388]);
+ALTER VIEW fact_car_details
+ LAYOUT (dv_immatriculations = [600, 20, 235, 202]);
 
