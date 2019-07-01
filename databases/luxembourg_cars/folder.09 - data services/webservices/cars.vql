@@ -33,7 +33,7 @@
             model : 'text', 
             model_id : 'text'
         ),
-        VIEW cars_statistics FIELDS (
+        VIEW fact_car_statistics FIELDS (
             model_id : 'text', 
             bodywork_code : 'text', 
             count : 'long'

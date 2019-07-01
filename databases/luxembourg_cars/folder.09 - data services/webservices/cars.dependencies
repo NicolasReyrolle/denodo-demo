@@ -22,8 +22,7 @@
 /databases/luxembourg_cars/folder.05 - final views/views/fv_model.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/model.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_cars_agg.vql
-/databases/luxembourg_cars/folder.06 - interfaces/views/cars_statistics.vql
-/extensions/jars/denodo-xtrafuncs-vdp-string-7.0.vql
+/databases/luxembourg_cars/folder.06 - interfaces/views/fact_car_statistics.vql
 /databases/luxembourg_cars/folder.01 - data sources/datasources/custom/ds_code_ec_codcar.vql
 /databases/luxembourg_cars/folder.02 - base views/views/bv_code_ec_codcar.vql
 /databases/luxembourg_cars/folder.03 - integration views/views/iv_bodywork.vql

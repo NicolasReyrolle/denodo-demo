@@ -19,4 +19,4 @@
 /databases/luxembourg_cars/folder.05 - final views/views/fv_model.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/model.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_cars_agg.vql
-/databases/luxembourg_cars/folder.06 - interfaces/views/cars_statistics.vql
+/databases/luxembourg_cars/folder.06 - interfaces/views/fact_car_statistics.vql
