@@ -1,0 +1,33 @@
+﻿CREATE OR REPLACE INTERFACE VIEW car (
+        model_id:text (sourcetyperadix = '10', sourcetypesize = '32', sourcetypeid = '12'),
+        first_registration:localdate (description = 'Date of first registration'),
+        first_registration_lux:localdate (description = 'Date of first registration in Luxemburg'),
+        registration_date:localdate (description = 'Date of the registration to which this certificate refers'),
+        mvid:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        libcrb:text (sourcetyperadix = '10', sourcetypesize = '40', description = 'Fuel description', sourcetypeid = '12'),
+        nbrcyl:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        pkw:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        cyd:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        infco2:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        l100km:decimal (sourcetypedecimals = '3', sourcetyperadix = '10', sourcetypesize = '5', description = 'fuel consumption in l/100km (Combined)', sourcetypeid = '3'),
+        taxrate:double
+    )
+    SET IMPLEMENTATION dv_immatriculations(
+        model_id = model_id,
+        first_registration = first_registration,
+        first_registration_lux = first_registration_lux,
+        registration_date = registration_date,
+        mvid = mvid,
+        libcrb = libcrb,
+        nbrcyl = nbrcyl,
+        pkw = pkw,
+        cyd = cyd,
+        infco2 = infco2,
+        l100km = l100km,
+        taxrate = taxrate    
+)
+    FOLDER = '/06 - interfaces';
+
+ALTER VIEW car
+ LAYOUT (dv_immatriculations = [600, 20, 235, 298]);
+

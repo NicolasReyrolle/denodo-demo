@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW fv_brand FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'brand_code' ) AS SELECT DISTINCT brand_code AS brand_code, max(brand_name) AS brand_name FROM dv_immatriculations GROUP BY brand_code;
+
+ALTER VIEW fv_brand
+ LAYOUT (dv_immatriculations = [20, 20, 200, 364]);
+

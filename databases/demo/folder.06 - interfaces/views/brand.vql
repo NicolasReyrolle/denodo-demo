@@ -1,0 +1,10 @@
+﻿CREATE OR REPLACE INTERFACE VIEW brand (
+        brand_code:int (description = 'Manufacturer Code'),
+        brand_name:text (description = 'Manufacturer wording')
+    )
+    SET IMPLEMENTATION fv_brand
+    FOLDER = '/06 - interfaces';
+
+ALTER VIEW brand
+ LAYOUT (fv_brand = [543, 20, 200, 66]);
+

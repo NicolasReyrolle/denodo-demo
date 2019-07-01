@@ -1,0 +1,12 @@
+﻿CREATE OR REPLACE INTERFACE VIEW cars_statistics (
+        period:text,
+        model_id:text (sourcetyperadix = '10', sourcetypesize = '32', description = 'Model identifier', sourcetypeid = '12'),
+        bodywork_code:text (sourcetyperadix = '10', sourcetypesize = '4', description = 'European Bodywork Code', sourcetypeid = '12'),
+        count:long
+    )
+    SET IMPLEMENTATION fv_cars_agg
+    FOLDER = '/06 - interfaces';
+
+ALTER VIEW cars_statistics
+ LAYOUT (fv_cars_agg = [598, 20, 207, 106]);
+

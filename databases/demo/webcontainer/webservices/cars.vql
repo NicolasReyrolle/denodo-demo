@@ -1,0 +1,5 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+UNDEPLOY IF EXISTS WEBSERVICE cars;
+
+DEPLOY WEBSERVICE cars LOGIN = '${databases.demo.webcontainer.webservices.cars.LOGIN}' PASSWORD = '${databases.demo.webcontainer.webservices.cars.PASSWORD}' ${databases.demo.webcontainer.webservices.cars.PASSWORD.ENCRYPTED};
+

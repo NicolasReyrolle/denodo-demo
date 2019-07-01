@@ -1,0 +1,13 @@
+﻿CREATE OR REPLACE INTERFACE VIEW bodywork (
+        bodywork_code:text,
+        bodywork_name:text (sourcetypeid = '12'),
+        bodywork_category:text (sourcetypeid = '12'),
+        bodywork_type:text (sourcetypeid = '12')
+    )
+    SET IMPLEMENTATION fv_bodywork
+    FOLDER = '/06 - interfaces'
+    DESCRIPTION = 'Types of car bodyworks' ;
+
+ALTER VIEW bodywork
+ LAYOUT (fv_bodywork = [518, 20, 201, 106]);
+

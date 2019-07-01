@@ -1,0 +1,26 @@
+﻿/databases/demo/folder.08 - associations/08 - associations.vql
+/databases/demo/folder.06 - interfaces/06 - interfaces.vql
+/databases/demo/folder.05 - final views/05 - final views.vql
+/databases/demo/folder.03 - integration views/03 - integration views.vql
+/extensions/jars/denodo-xtrafuncs-vdp-string-7.0.vql
+/databases/demo/folder.02 - base views/02 - base views.vql
+/databases/demo/folder.01 - data sources/01 - data sources.vql
+/databases/demo/folder.01 - data sources/datasources/custom/ds_code_ec_codcar.vql
+/databases/demo/folder.02 - base views/views/bv_code_ec_codcar.vql
+/databases/demo/folder.03 - integration views/views/iv_bodywork.vql
+/databases/demo/folder.05 - final views/views/fv_bodywork.vql
+/databases/demo/folder.06 - interfaces/views/bodywork.vql
+/databases/demo/folder.04 - derived views/04 - derived views.vql
+/databases/demo/folder.01 - data sources/datasources/jdbc/ds_immatriculations_full.vql
+/databases/demo/folder.02 - base views/views/bv_immatriculations.vql
+/databases/demo/folder.03 - integration views/views/iv_immatriculations.vql
+/databases/demo/folder.01 - data sources/datasources/json/ds_statec.vql
+/databases/demo/folder.02 - base views/views/bv_statec.vql
+/databases/demo/folder.03 - integration views/views/iv_statec.vql
+/databases/demo/folder.01 - data sources/datasources/df/ds_fuel_mapping.vql
+/databases/demo/folder.02 - base views/views/bv_fuel_mapping.vql
+/databases/demo/folder.01 - data sources/datasources/json/ds_car_taxes.vql
+/databases/demo/folder.02 - base views/views/bv_car_taxes.vql
+/databases/demo/folder.04 - derived views/views/dv_immatriculations.vql
+/databases/demo/folder.05 - final views/views/fv_cars_agg.vql
+/databases/demo/folder.06 - interfaces/views/cars_statistics.vql
