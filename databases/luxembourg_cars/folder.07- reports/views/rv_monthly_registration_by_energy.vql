@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW rv_monthly_registration_by_energy FOLDER = '/07- reports'
+    PRIMARY KEY ( 'period' , 'fuel_type' ) AS SELECT period AS period, fuel_type AS fuel_type, count(*) AS count FROM dv_immatriculations GROUP BY period, fuel_type;
+
+ALTER VIEW rv_monthly_registration_by_energy
+ LAYOUT (dv_immatriculations = [20, 20, 207, 526]);
+

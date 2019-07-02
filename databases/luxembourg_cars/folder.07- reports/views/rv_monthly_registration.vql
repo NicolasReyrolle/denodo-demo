@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW rv_monthly_registration FOLDER = '/07- reports'
+    PRIMARY KEY ( 'period' , 'bodywork_category' ) AS SELECT dv_immatriculations.period AS period, fv_bodywork.bodywork_category AS bodywork_category, count(*) AS count FROM fv_bodywork AS fv_bodywork INNER JOIN dv_immatriculations AS dv_immatriculations ON fv_bodywork.bodywork_code = dv_immatriculations.bodywork_code  GROUP BY dv_immatriculations.period, fv_bodywork.bodywork_category;
+
+ALTER VIEW rv_monthly_registration
+ LAYOUT (fv_bodywork = [210, 130, 200, 106], dv_immatriculations = [851, 104, 200, 225]);
+
