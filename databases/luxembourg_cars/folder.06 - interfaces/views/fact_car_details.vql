@@ -8,7 +8,8 @@
         engine_capacity:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
         co2_emissions:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
         fuel_consumption:decimal (sourcetypedecimals = '3', sourcetyperadix = '10', sourcetypesize = '5', description = 'fuel consumption in l/100km (Combined)', sourcetypeid = '3'),
-        taxrate:double
+        taxrate:double,
+        bodywork_code:text
     )
     SET IMPLEMENTATION dv_immatriculations(
         period = period,
@@ -20,11 +21,12 @@
         engine_capacity = cyd,
         co2_emissions = infco2,
         fuel_consumption = l100km,
-        taxrate = taxrate    
+        taxrate = taxrate,
+        bodywork_code = bodywork_code    
 )
     FOLDER = '/06 - interfaces'
     DESCRIPTION = 'Car details' ;
 
 ALTER VIEW fact_car_details
- LAYOUT (dv_immatriculations = [600, 20, 235, 166]);
+ LAYOUT (dv_immatriculations = [600, 20, 235, 388]);
 
