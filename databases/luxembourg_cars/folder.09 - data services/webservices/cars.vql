@@ -22,8 +22,7 @@
             net_power_kw : 'int', 
             engine_capacity : 'int', 
             co2_emissions : 'int', 
-            fuel_consumption : 'decimal', 
-            taxrate : 'double'
+            fuel_consumption : 'decimal'
         ),
         VIEW model FIELDS (
             brand_code : 'int', 

@@ -193,5 +193,6 @@ CREATE OR REPLACE TABLE bv_immatriculations I18N us_pst (
         OUTPUTLIST (abs, asr, cateu, catstc, codcar, codcrb, codmrq, coul, cyd, datcir, datcir_gd, datcirprm, dathorcir, empmax, essim, estan, estri, eunorm, hau, i4x4, induti, infco2, infnox, infouti, infparticule, l100km, lar, lares1, lares2, libcar, libcrb, libmrq, lon, mma, mmaatt, mmaens, mmaraf, mmarsf, model_id, mvid, nbrcyl, paypvn, period, pkw, plaarr, plaass, plaava, pladeb, plasar, plasav, pvrnum, pvrvar, pvrver, typcom, typmot, typusi
         )
         WRAPPER (jdbc bv_immatriculations)
-    );
+    )
+    SMART_ONLY;
 
