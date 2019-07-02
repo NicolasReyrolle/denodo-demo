@@ -1,20 +1,20 @@
-input_fuel;rest_fuel
-CNG(GAZ NATUREL COMPRIME);petrol
-DIESEL;diesel
-DIESEL (GASOIL-FUEL);diesel
-DIESEL + LPG;diesel
-ELECTRIQUE;electric
-ESSENCE;petrol
-ESSENCE + CNG;petrol
-ESSENCE + LPG;petrol
-ESSENCE + METHANE;petrol
-ESSENCE / ETHANOL;petrol
-HYBRIDE - DIE./ELEC. NOVC;diesel
-HYBRIDE - DIE./ELEC. OVC;diesel
-HYBRIDE - ELECTRIQUE/ESS.;petrol
-HYBRIDE - ESS./ELEC. NOVC;diesel
-HYBRIDE - ESS./ELEC. OVC;diesel
-INCONNU;
-LNG;petrol
-LPG;petrol
-PAS DE CARBURANT;0
+input_fuel;rest_fuel;french_label
+CNG(GAZ NATUREL COMPRIME);petrol;Gaz
+DIESEL;diesel;Diesel
+DIESEL (GASOIL-FUEL);diesel;Diesel
+DIESEL + LPG;diesel;Diesel
+ELECTRIQUE;electric,Electrique
+ESSENCE;petrol;Essence
+ESSENCE + CNG;petrol;Essence
+ESSENCE + LPG;petrol;Essence
+ESSENCE + METHANE;petrol;Essence
+ESSENCE / ETHANOL;petrol;Essence
+HYBRIDE - DIE./ELEC. NOVC;diesel;Diesel
+HYBRIDE - DIE./ELEC. OVC;diesel;Diesel
+HYBRIDE - ELECTRIQUE/ESS.;petrol;Essence
+HYBRIDE - ESS./ELEC. NOVC;diesel;Diesel
+HYBRIDE - ESS./ELEC. OVC;diesel;Diesel
+INCONNU;unknown;Inconnu
+LNG;petrol;Gaz
+LPG;petrol;Gaz
+PAS DE CARBURANT;none;Aucun
