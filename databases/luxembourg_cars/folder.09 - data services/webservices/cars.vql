@@ -16,13 +16,13 @@
         ),
         VIEW fact_car_details FIELDS (
             model_id : 'text', 
-            mvid : 'int', 
-            libcrb : 'text', 
-            nbrcyl : 'int', 
-            pkw : 'int', 
-            cyd : 'int', 
-            infco2 : 'int', 
-            l100km : 'decimal', 
+            mass_running_order : 'int', 
+            fuel_type : 'text', 
+            cylinders_count : 'int', 
+            net_power_kw : 'int', 
+            engine_capacity : 'int', 
+            co2_emissions : 'int', 
+            fuel_consumption : 'decimal', 
             taxrate : 'double'
         ),
         VIEW model FIELDS (
