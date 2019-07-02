@@ -1,4 +1,5 @@
-﻿CREATE OR REPLACE VIEW fv_bodywork FOLDER = '/05 - final views' AS SELECT iv_bodywork.code AS bodywork_code, iv_bodywork.label AS bodywork_name, iv_bodywork.category AS bodywork_category, iv_bodywork.type AS bodywork_type FROM iv_bodywork;
+﻿CREATE OR REPLACE VIEW fv_bodywork FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'bodywork_code' ) AS SELECT iv_bodywork.code AS bodywork_code, iv_bodywork.label AS bodywork_name, iv_bodywork.category AS bodywork_category, iv_bodywork.type AS bodywork_type FROM iv_bodywork;
 
 ALTER VIEW fv_bodywork
  LAYOUT (iv_bodywork = [20, 20, 200, 106]);
