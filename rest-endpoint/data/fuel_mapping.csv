@@ -3,7 +3,7 @@ CNG(GAZ NATUREL COMPRIME);petrol;Gaz
 DIESEL;diesel;Diesel
 DIESEL (GASOIL-FUEL);diesel;Diesel
 DIESEL + LPG;diesel;Diesel
-ELECTRIQUE;electric,Electrique
+ELECTRIQUE;electric;Electrique
 ESSENCE;petrol;Essence
 ESSENCE + CNG;petrol;Essence
 ESSENCE + LPG;petrol;Essence
