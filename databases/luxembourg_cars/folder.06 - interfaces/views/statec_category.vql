@@ -1,0 +1,12 @@
+﻿CREATE OR REPLACE INTERFACE VIEW statec_category (
+        statec_code:int,
+        statec_label_en:text,
+        statec_label_fr:text
+    )
+    SET IMPLEMENTATION fv_statec
+    FOLDER = '/06 - interfaces'
+    DESCRIPTION = 'STATEC vehicles categories' ;
+
+ALTER VIEW statec_category
+ LAYOUT (fv_statec = [553, 20, 202, 86]);
+

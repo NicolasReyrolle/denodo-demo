@@ -13,7 +13,8 @@
         first_registration_date_lux:localdate (sourcetypeid = '91'),
         number:int,
         usage_code:text,
-        european_category_code:text
+        european_category_code:text,
+        statec_category:int
     )
     SET IMPLEMENTATION dv_immatriculations(
         period = period,
@@ -30,7 +31,8 @@
         first_registration_date_lux = datcir_gd,
         number = number,
         usage_code = induti,
-        european_category_code = cateu    
+        european_category_code = cateu,
+        statec_category = catstc    
 )
     FOLDER = '/06 - interfaces'
     DESCRIPTION = 'Car details' ;
