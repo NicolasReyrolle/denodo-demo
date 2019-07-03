@@ -12,7 +12,8 @@
         first_registration_date:localdate (sourcetypeid = '91'),
         first_registration_date_lux:localdate (sourcetypeid = '91'),
         number:int,
-        usage_code:text
+        usage_code:text,
+        european_category_code:text
     )
     SET IMPLEMENTATION dv_immatriculations(
         period = period,
@@ -28,11 +29,12 @@
         first_registration_date = datcirprm,
         first_registration_date_lux = datcir_gd,
         number = number,
-        usage_code = induti    
+        usage_code = induti,
+        european_category_code = cateu    
 )
     FOLDER = '/06 - interfaces'
     DESCRIPTION = 'Car details' ;
 
 ALTER VIEW fact_car_details
- LAYOUT (dv_immatriculations = [600, 20, 235, 166]);
+ LAYOUT (dv_immatriculations = [600, 20, 235, 388]);
 

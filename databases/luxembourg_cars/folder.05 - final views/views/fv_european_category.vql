@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW fv_european_category FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'european_category_code' ) AS SELECT bv_code_ec_cateu.code AS european_category_code, bv_code_ec_cateu.categorie AS european_category_description, bv_code_ec_cateu.type AS european_category_type FROM bv_code_ec_cateu;
+
+ALTER VIEW fv_european_category
+ LAYOUT (bv_code_ec_cateu = [20, 20, 200, 86]);
+
