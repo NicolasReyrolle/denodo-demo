@@ -1,4 +1,5 @@
-﻿CREATE OR REPLACE VIEW fv_usage_indicator FOLDER = '/05 - final views' AS SELECT trim(bv_code_ec_induti.induti) AS usage_code, bv_code_ec_induti.indicationutilisation_0 AS usage_description FROM bv_code_ec_induti;
+﻿CREATE OR REPLACE VIEW fv_usage_indicator FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'usage_code' ) AS SELECT trim(bv_code_ec_induti.induti) AS usage_code, bv_code_ec_induti.indicationutilisation_0 AS usage_description FROM bv_code_ec_induti;
 
 ALTER VIEW fv_usage_indicator
  LAYOUT (bv_code_ec_induti = [20, 20, 237, 66]);
