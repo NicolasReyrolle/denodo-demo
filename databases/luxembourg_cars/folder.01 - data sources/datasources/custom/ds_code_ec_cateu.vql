@@ -1,0 +1,23 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE DATASOURCE CUSTOM ds_code_ec_cateu
+    FOLDER = '/01 - data sources'
+    CLASSNAME='com.denodo.vdb.contrib.wrapper.xls.ExcelWrapper';
+
+CREATE OR REPLACE WRAPPER CUSTOM ds_code_ec_cateu
+    FOLDER = '/02 - base views'
+    DATASOURCENAME=ds_code_ec_cateu
+    PARAMETERS (
+      'Type of file' = 'Excel 2007 or later (*.xlsx)',
+      'File location' = ROUTE LOCAL 'LocalConnection' '${databases.luxembourg_cars.folder.02 - base views.views.custom.ds_code_ec_cateu.File location.ROUTE.LOCAL.PATH}',
+      'Worksheet' = 'CATEU',
+      'Extract data from all sheets' = false,
+      'Extract sheet name as a new column' = false,
+      'Has headers' = true,
+      'Stream tuples' = true
+    )
+    OUTPUTSCHEMA (
+        code = 'Code' : 'java.lang.String' (OPT) (sourcetypeid='12')  SORTABLE,
+        categorie = 'Categorie' : 'java.lang.String' (OPT) (sourcetypeid='12')  SORTABLE,
+        type = 'Type' : 'java.lang.String' (OPT) (sourcetypeid='12')  SORTABLE
+    );
+

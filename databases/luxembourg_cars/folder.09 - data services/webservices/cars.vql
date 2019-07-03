@@ -14,16 +14,6 @@
             brand_code : 'int', 
             brand_name : 'text'
         ),
-        VIEW fact_car_details FIELDS (
-            model_id : 'text', 
-            mass_running_order : 'int', 
-            fuel_type : 'text', 
-            cylinders_count : 'int', 
-            net_power_kw : 'int', 
-            engine_capacity : 'int', 
-            co2_emissions : 'int', 
-            fuel_consumption : 'decimal'
-        ),
         VIEW model FIELDS (
             brand_code : 'int', 
             model : 'text', 
@@ -39,9 +29,29 @@
             bodywork_name : 'text', 
             bodywork_category : 'text', 
             bodywork_type : 'text'
+        ),
+        VIEW usage_information FIELDS (
+            usage_code : 'text', 
+            usage_description : 'text'
+        ),
+        VIEW fact_car_details FIELDS (
+            period : 'text', 
+            model_id : 'text', 
+            mass_running_order : 'int', 
+            fuel_type : 'text', 
+            cylinders_count : 'int', 
+            net_power_kw : 'int', 
+            engine_capacity : 'int', 
+            co2_emissions : 'int', 
+            fuel_consumption : 'decimal', 
+            bodywork_code : 'text', 
+            first_registration_date : 'localdate', 
+            first_registration_date_lux : 'localdate', 
+            number : 'int', 
+            usage_code : 'text'
         )
     )
-    ASSOCIATIONS ( brand_model, model_car_details, model_cars_statistics, bodywork_cars_statistics )
+    ASSOCIATIONS ( brand_model, model_car_details, model_cars_statistics, bodywork_cars_statistics, usage_information_fact_car_details )
     OPTIONS ( NULLVALUESASEMPTYXMLELEMENTS = false ) 
     OPENAPI2 ( API_VERSION = '1.0.0' ) 
     FOLDER = '/09 - data services';

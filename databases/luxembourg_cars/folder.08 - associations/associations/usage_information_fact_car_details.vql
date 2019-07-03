@@ -1,0 +1,9 @@
+﻿CREATE OR REPLACE ASSOCIATION usage_information_fact_car_details REFERENTIAL CONSTRAINT 
+FOLDER = '/08 - associations'
+    ENDPOINT usage_information_statistics usage_information PRINCIPAL (1)
+    ENDPOINT usage_information fact_car_details (0,*)
+    ADD MAPPING usage_code=usage_code;
+
+ALTER ASSOCIATION usage_information_fact_car_details
+ LAYOUT (usage_information = [140, 170, 210, 81], fact_car_details = [530, 100, 650, 321]);
+
