@@ -21,5 +21,6 @@
 /databases/luxembourg_cars/folder.01 - data sources/datasources/json/ds_car_taxes.vql
 /databases/luxembourg_cars/folder.02 - base views/views/bv_car_taxes.vql
 /databases/luxembourg_cars/folder.04 - derived views/views/dv_immatriculations.vql
+/databases/luxembourg_cars/folder.05 - final views/views/fv_brand.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_cars_agg.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/fact_car_statistics.vql

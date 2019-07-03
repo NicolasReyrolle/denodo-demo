@@ -1,13 +1,24 @@
 ﻿CREATE OR REPLACE INTERFACE VIEW fact_car_statistics (
-        period:text,
-        model_id:text (sourcetyperadix = '10', sourcetypesize = '32', description = 'Model identifier', sourcetypeid = '12'),
-        bodywork_code:text (sourcetyperadix = '10', sourcetypesize = '4', description = 'European Bodywork Code', sourcetypeid = '12'),
-        count:long
+        period:text (sourcetyperadix = '10', sourcetypesize = '6', description = 'Data period (YYYYMM)', sourcetypeid = '1'),
+        bodywork_type:text,
+        fuel_type:text,
+        brand_name:text,
+        count:int,
+        fuel_consumption:decimal,
+        co2_emissions:int
     )
-    SET IMPLEMENTATION fv_cars_agg
+    SET IMPLEMENTATION fv_cars_agg(
+        period = period,
+        bodywork_type = bodywork_type,
+        fuel_type = fuel_type,
+        brand_name = brand_name,
+        count = count,
+        fuel_consumption = l100km,
+        co2_emissions = infco2    
+)
     FOLDER = '/06 - interfaces'
     DESCRIPTION = 'Count of cars by various dimensions' ;
 
 ALTER VIEW fact_car_statistics
- LAYOUT (fv_cars_agg = [598, 20, 207, 106]);
+ LAYOUT (fv_cars_agg = [443, 20, 200, 166]);
 

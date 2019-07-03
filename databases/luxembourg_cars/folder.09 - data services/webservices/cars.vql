@@ -20,9 +20,12 @@
             model_id : 'text'
         ),
         VIEW fact_car_statistics FIELDS (
-            model_id : 'text', 
-            bodywork_code : 'text', 
-            count : 'long'
+            count : 'int', 
+            bodywork_type : 'text' UNESCAPED, 
+            fuel_type : 'text' UNESCAPED, 
+            brand_name : 'text' UNESCAPED, 
+            fuel_consumption : 'decimal' UNESCAPED, 
+            co2_emissions : 'int' UNESCAPED
         ),
         VIEW bodywork FIELDS (
             bodywork_code : 'text', 

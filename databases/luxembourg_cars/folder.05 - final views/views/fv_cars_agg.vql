@@ -1,6 +1,6 @@
 ﻿CREATE OR REPLACE VIEW fv_cars_agg FOLDER = '/05 - final views'
-    PRIMARY KEY ( 'period' , 'model_id' , 'bodywork_code' ) AS SELECT period AS period, model_id AS model_id, bodywork_code AS bodywork_code, count(*) AS count FROM dv_immatriculations GROUP BY model_id, bodywork_code, period;
+    PRIMARY KEY ( 'period' , 'fuel_type' , 'bodywork_type' , 'brand_name' ) AS SELECT dv_immatriculations.period AS period, fv_bodywork.bodywork_type AS bodywork_type, dv_immatriculations.fuel_type AS fuel_type, fv_brand.brand_name AS brand_name, sum(dv_immatriculations.number) AS count, sum(dv_immatriculations.l100km) AS l100km, sum(dv_immatriculations.infco2) AS infco2 FROM fv_brand AS fv_brand LEFT OUTER JOIN (dv_immatriculations AS dv_immatriculations LEFT OUTER JOIN fv_bodywork AS fv_bodywork ON dv_immatriculations.bodywork_code = fv_bodywork.bodywork_code ) ON fv_brand.brand_code = dv_immatriculations.brand_code  GROUP BY dv_immatriculations.period, dv_immatriculations.fuel_type, fv_bodywork.bodywork_type, fv_brand.brand_name;
 
 ALTER VIEW fv_cars_agg
- LAYOUT (dv_immatriculations = [20, 20, 235, 566]);
+ LAYOUT (fv_brand = [10, 130, 200, 66], dv_immatriculations = [550, 40, 200, 225], fv_bodywork = [1140, 30, 200, 106]);
 
