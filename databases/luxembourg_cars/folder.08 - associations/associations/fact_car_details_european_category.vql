@@ -1,0 +1,9 @@
+﻿CREATE OR REPLACE ASSOCIATION fact_car_details_european_category REFERENTIAL CONSTRAINT 
+FOLDER = '/08 - associations'
+    ENDPOINT is_of_european_category fact_car_details (0,*)
+    ENDPOINT has_cars_by_european_category european_category PRINCIPAL (1)
+    ADD MAPPING european_category_code=european_category_code;
+
+ALTER ASSOCIATION fact_car_details_european_category
+ LAYOUT (fact_car_details = [149, 105, 200, 225], european_category = [820, 171, 200, 86]);
+

@@ -1,0 +1,11 @@
+﻿CREATE OR REPLACE INTERFACE VIEW usage_information (
+        usage_code:text (sourcetypeid = '12'),
+        usage_description:text (sourcetypeid = '12')
+    )
+    SET IMPLEMENTATION fv_usage_indicator
+    FOLDER = '/06 - interfaces'
+    DESCRIPTION = 'Information about the usage of vehicles' ;
+
+ALTER VIEW usage_information
+ LAYOUT (fv_usage_indicator = [452, 20, 218, 66]);
+

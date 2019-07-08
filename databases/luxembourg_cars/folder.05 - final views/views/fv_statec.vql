@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW fv_statec FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'statec_code' ) AS SELECT iv_statec.code AS statec_code, iv_statec.label_en AS statec_label_en, iv_statec.label_fr AS statec_label_fr FROM iv_statec;
+
+ALTER VIEW fv_statec
+ LAYOUT (iv_statec = [20, 20, 200, 86]);
+

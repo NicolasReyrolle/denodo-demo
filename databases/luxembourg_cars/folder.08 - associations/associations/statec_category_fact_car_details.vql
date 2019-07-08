@@ -1,0 +1,9 @@
+﻿CREATE OR REPLACE ASSOCIATION statec_category_fact_car_details REFERENTIAL CONSTRAINT 
+FOLDER = '/08 - associations'
+    ENDPOINT has_statec_category fact_car_details (0,*)
+    ENDPOINT contains_cars_by_statec_category statec_category PRINCIPAL (1)
+    ADD MAPPING statec_category=statec_code;
+
+ALTER ASSOCIATION statec_category_fact_car_details
+ LAYOUT (fact_car_details = [420, 240, 200, 360], statec_category = [988, 192, 200, 86]);
+

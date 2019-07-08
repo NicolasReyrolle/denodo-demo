@@ -1,0 +1,12 @@
+﻿CREATE OR REPLACE INTERFACE VIEW european_category (
+        european_category_code:text (sourcetypeid = '12'),
+        european_category_description:text (sourcetypeid = '12'),
+        european_category_type:text (sourcetypeid = '12')
+    )
+    SET IMPLEMENTATION fv_european_category
+    FOLDER = '/06 - interfaces'
+    DESCRIPTION = 'European vehicles classification' ;
+
+ALTER VIEW european_category
+ LAYOUT (fv_european_category = [638, 20, 294, 86]);
+

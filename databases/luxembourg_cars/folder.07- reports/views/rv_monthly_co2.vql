@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW rv_monthly_co2 FOLDER = '/07- reports'
+    PRIMARY KEY ( 'period' , 'bodywork_category' , 'infco2' ) AS SELECT dv_immatriculations.period AS period, fv_bodywork.bodywork_category AS bodywork_category, dv_immatriculations.infco2 AS infco2, count(*) AS count FROM fv_bodywork AS fv_bodywork INNER JOIN dv_immatriculations AS dv_immatriculations ON fv_bodywork.bodywork_code = dv_immatriculations.bodywork_code  GROUP BY dv_immatriculations.period, fv_bodywork.bodywork_category, dv_immatriculations.infco2;
+
+ALTER VIEW rv_monthly_co2
+ LAYOUT (fv_bodywork = [347, 137, 200, 106], dv_immatriculations = [1020, 97, 200, 225]);
+

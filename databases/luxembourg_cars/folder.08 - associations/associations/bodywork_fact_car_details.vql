@@ -1,0 +1,9 @@
+﻿CREATE OR REPLACE ASSOCIATION bodywork_fact_car_details REFERENTIAL CONSTRAINT 
+FOLDER = '/08 - associations'
+    ENDPOINT has_cars_details bodywork PRINCIPAL (1)
+    ENDPOINT is_of_type fact_car_details (0,*)
+    ADD MAPPING bodywork_code=bodywork_code;
+
+ALTER ASSOCIATION bodywork_fact_car_details
+ LAYOUT (bodywork = [142, 147, 200, 106], fact_car_details = [681, 179, 200, 225]);
+

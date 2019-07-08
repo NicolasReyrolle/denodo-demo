@@ -1,4 +1,5 @@
-﻿/databases/luxembourg_cars/folder.05 - final views/05 - final views.vql
+﻿/databases/luxembourg_cars/folder.07- reports/07- reports.vql
+/databases/luxembourg_cars/folder.06 - interfaces/06 - interfaces.vql
 /databases/luxembourg_cars/folder.04 - derived views/04 - derived views.vql
 /databases/luxembourg_cars/folder.03 - integration views/03 - integration views.vql
 /databases/luxembourg_cars/folder.02 - base views/02 - base views.vql
@@ -14,8 +15,4 @@
 /databases/luxembourg_cars/folder.01 - data sources/datasources/json/ds_car_taxes.vql
 /databases/luxembourg_cars/folder.02 - base views/views/bv_car_taxes.vql
 /databases/luxembourg_cars/folder.04 - derived views/views/dv_immatriculations.vql
-/databases/luxembourg_cars/folder.05 - final views/views/fv_brand.vql
-/databases/luxembourg_cars/folder.01 - data sources/datasources/custom/ds_code_ec_codcar.vql
-/databases/luxembourg_cars/folder.02 - base views/views/bv_code_ec_codcar.vql
-/databases/luxembourg_cars/folder.03 - integration views/views/iv_bodywork.vql
-/databases/luxembourg_cars/folder.05 - final views/views/fv_bodywork.vql
+/databases/luxembourg_cars/folder.06 - interfaces/views/fact_car_details.vql

@@ -1,0 +1,21 @@
+﻿CREATE OR REPLACE TABLE bv_code_ec_cateu I18N us_pst (
+        code:text (sourcetypeid = '12'), 
+        categorie:text (sourcetypeid = '12'), 
+        type:text (sourcetypeid = '12')
+    )
+    FOLDER = '/02 - base views'
+    PRIMARY KEY ( 'code' )
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD ds_code_ec_cateu(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD code (any) OPT ANY
+             ADD categorie (any) OPT ANY
+             ADD type (any) OPT ANY
+        )
+        OUTPUTLIST (categorie, code, type
+        )
+        WRAPPER (custom ds_code_ec_cateu)
+    );
+

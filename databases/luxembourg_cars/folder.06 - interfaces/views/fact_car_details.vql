@@ -1,30 +1,42 @@
 ﻿CREATE OR REPLACE INTERFACE VIEW fact_car_details (
         period:text,
         model_id:text (sourcetyperadix = '10', sourcetypesize = '32', sourcetypeid = '12'),
-        mvid:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
-        libcrb:text (sourcetyperadix = '10', sourcetypesize = '40', description = 'Fuel description', sourcetypeid = '12'),
-        nbrcyl:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
-        pkw:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
-        cyd:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
-        infco2:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
-        l100km:decimal (sourcetypedecimals = '3', sourcetyperadix = '10', sourcetypesize = '5', description = 'fuel consumption in l/100km (Combined)', sourcetypeid = '3'),
-        taxrate:double
+        mass_running_order:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        fuel_type:text (sourcetyperadix = '10', sourcetypesize = '40', description = 'Fuel description', sourcetypeid = '12'),
+        cylinders_count:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        net_power_kw:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        engine_capacity:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        co2_emissions:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        fuel_consumption:decimal (sourcetypedecimals = '3', sourcetyperadix = '10', sourcetypesize = '5', description = 'fuel consumption in l/100km (Combined)', sourcetypeid = '3'),
+        bodywork_code:text,
+        first_registration_date:localdate (sourcetypeid = '91'),
+        first_registration_date_lux:localdate (sourcetypeid = '91'),
+        number:int,
+        usage_code:text,
+        european_category_code:text,
+        statec_category:int
     )
     SET IMPLEMENTATION dv_immatriculations(
         period = period,
         model_id = model_id,
-        mvid = mvid,
-        libcrb = libcrb,
-        nbrcyl = nbrcyl,
-        pkw = pkw,
-        cyd = cyd,
-        infco2 = infco2,
-        l100km = l100km,
-        taxrate = taxrate    
+        mass_running_order = mvid,
+        fuel_type = fuel_type,
+        cylinders_count = nbrcyl,
+        net_power_kw = pkw,
+        engine_capacity = cyd,
+        co2_emissions = infco2,
+        fuel_consumption = l100km,
+        bodywork_code = bodywork_code,
+        first_registration_date = datcirprm,
+        first_registration_date_lux = datcir_gd,
+        number = number,
+        usage_code = induti,
+        european_category_code = cateu,
+        statec_category = catstc    
 )
     FOLDER = '/06 - interfaces'
     DESCRIPTION = 'Car details' ;
 
 ALTER VIEW fact_car_details
- LAYOUT (dv_immatriculations = [600, 20, 235, 202]);
+ LAYOUT (dv_immatriculations = [600, 20, 235, 388]);
 
