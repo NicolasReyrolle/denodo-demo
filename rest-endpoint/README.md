@@ -5,5 +5,6 @@ pipenv sync
 
 To run: 
 ```bash
+export LC_ALL=en_US.utf8
 pipenv run start
 ```
