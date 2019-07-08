@@ -9,11 +9,11 @@ ESSENCE + CNG;petrol;Essence
 ESSENCE + LPG;petrol;Essence
 ESSENCE + METHANE;petrol;Essence
 ESSENCE / ETHANOL;petrol;Essence
-HYBRIDE - DIE./ELEC. NOVC;diesel;Diesel
-HYBRIDE - DIE./ELEC. OVC;diesel;Diesel
-HYBRIDE - ELECTRIQUE/ESS.;petrol;Essence
-HYBRIDE - ESS./ELEC. NOVC;diesel;Diesel
-HYBRIDE - ESS./ELEC. OVC;diesel;Diesel
+HYBRIDE - DIE./ELEC. NOVC;diesel;Hybride
+HYBRIDE - DIE./ELEC. OVC;diesel;Hybride
+HYBRIDE - ELECTRIQUE/ESS.;petrol;Hybride
+HYBRIDE - ESS./ELEC. NOVC;diesel;Hybride
+HYBRIDE - ESS./ELEC. OVC;diesel;Hybride
 INCONNU;unknown;Inconnu
 LNG;petrol;Gaz
 LPG;petrol;Gaz
