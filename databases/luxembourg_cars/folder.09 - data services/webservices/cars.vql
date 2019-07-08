@@ -18,57 +18,10 @@
             brand_code : 'int', 
             model : 'text', 
             model_id : 'text'
-        ),
-        VIEW fact_car_statistics FIELDS (
-            count : 'int', 
-            bodywork_type : 'text' UNESCAPED, 
-            fuel_type : 'text' UNESCAPED, 
-            brand_name : 'text' UNESCAPED, 
-            fuel_consumption : 'decimal' UNESCAPED, 
-            co2_emissions : 'int' UNESCAPED
-        ),
-        VIEW bodywork FIELDS (
-            bodywork_code : 'text', 
-            bodywork_name : 'text', 
-            bodywork_category : 'text', 
-            bodywork_type : 'text'
-        ),
-        VIEW usage_information FIELDS (
-            usage_code : 'text', 
-            usage_description : 'text'
-        ),
-        VIEW european_category FIELDS (
-            european_category_code : 'text', 
-            european_category_description : 'text', 
-            european_category_type : 'text'
-        ),
-        VIEW fact_car_details FIELDS (
-            period : 'text', 
-            model_id : 'text', 
-            mass_running_order : 'int', 
-            fuel_type : 'text', 
-            cylinders_count : 'int', 
-            net_power_kw : 'int', 
-            engine_capacity : 'int', 
-            co2_emissions : 'int', 
-            fuel_consumption : 'decimal', 
-            bodywork_code : 'text', 
-            first_registration_date : 'localdate', 
-            first_registration_date_lux : 'localdate', 
-            number : 'int', 
-            usage_code : 'text', 
-            european_category_code : 'text', 
-            statec_category : 'int'
-        ),
-        VIEW statec_category FIELDS (
-            statec_code : 'int', 
-            statec_label_en : 'text', 
-            statec_label_fr : 'text'
         )
     )
-    ASSOCIATIONS ( brand_model, model_car_details, model_cars_statistics, bodywork_cars_statistics, usage_information_fact_car_details, fact_car_details_european_category, bodywork_fact_car_details, statec_category_fact_car_details )
-    OPTIONS ( NULLVALUESASEMPTYXMLELEMENTS = false
-        MAX_ROWS_PER_PAGE = 1000 ) 
+    ASSOCIATIONS ( brand_model )
+    OPTIONS ( NULLVALUESASEMPTYXMLELEMENTS = false ) 
     OPENAPI2 ( API_VERSION = '1.0.0' ) 
     FOLDER = '/09 - data services';
 
