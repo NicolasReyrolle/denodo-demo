@@ -2,18 +2,18 @@ input_fuel;rest_fuel;french_label
 CNG(GAZ NATUREL COMPRIME);petrol;Gaz
 DIESEL;diesel;Diesel
 DIESEL (GASOIL-FUEL);diesel;Diesel
-DIESEL + LPG;diesel;Diesel
+DIESEL + LPG;diesel;Hybride gaz
 ELECTRIQUE;electric;Electrique
 ESSENCE;petrol;Essence
-ESSENCE + CNG;petrol;Essence
-ESSENCE + LPG;petrol;Essence
-ESSENCE + METHANE;petrol;Essence
+ESSENCE + CNG;petrol;Hybride gaz
+ESSENCE + LPG;petrol;Hybride gaz
+ESSENCE + METHANE;petrol;Hybride gaz
 ESSENCE / ETHANOL;petrol;Essence
-HYBRIDE - DIE./ELEC. NOVC;diesel;Hybride
-HYBRIDE - DIE./ELEC. OVC;diesel;Hybride
-HYBRIDE - ELECTRIQUE/ESS.;petrol;Hybride
-HYBRIDE - ESS./ELEC. NOVC;diesel;Hybride
-HYBRIDE - ESS./ELEC. OVC;diesel;Hybride
+HYBRIDE - DIE./ELEC. NOVC;diesel;Hybride électrique
+HYBRIDE - DIE./ELEC. OVC;diesel;Hybride électrique
+HYBRIDE - ELECTRIQUE/ESS.;petrol;Hybride électrique
+HYBRIDE - ESS./ELEC. NOVC;diesel;Hybride électrique
+HYBRIDE - ESS./ELEC. OVC;diesel;Hybride électrique
 INCONNU;unknown;Inconnu
 LNG;petrol;Gaz
 LPG;petrol;Gaz
