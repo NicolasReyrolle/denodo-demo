@@ -1,8 +1,7 @@
-code_operation;french_label;english_label
-N;Nouvelle Immatriculation;New registration
-I;Importation;Import
-T; Transcription / vente àl'intérieur du Pays; Inland Transfer
-E; Exportation (immatriculé >= 1 ans); Export (registered >= 1 year)
-H;Hors circulation; Vehicle registration suspension
-E1; Exportation; Export
-
+code_operation;french_label;english_label;operation_type
+N;Nouvelle Immatriculation;New registration;Input
+I;Importation;Import;Input
+T;Transcription / vente à l'intérieur du Pays;Inland Transfer;Transfer
+E;Exportation (immatriculé >= 1 ans);Export (registered >= 1 year);Output
+H;Hors circulation;Vehicle registration suspension;Output
+E1;Exportation;Export;Output
