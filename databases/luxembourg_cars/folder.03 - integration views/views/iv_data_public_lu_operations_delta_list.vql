@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE VIEW iv_data_public_lu_operations_delta_list FOLDER = '/03 - integration views'
-    PRIMARY KEY ( 'resources_id' ) AS SELECT resources_id AS resources_id, frequency AS frequency, resources_created_at AS resources_created_at, filesize AS filesize, filetype AS filetype, format AS format, resources_last_modified AS resources_last_modified, published AS published, resources_title AS resources_title, url AS url, substr(resources_title, 18, 6) AS period FROM FLATTEN bv_data_public_lu_operations_delta_list AS v ( v.resources) WHERE v.format = 'xlsx';
+    PRIMARY KEY ( 'resources_id' ) AS SELECT resources_id AS resources_id, frequency AS frequency, resources_created_at AS resources_created_at, filesize AS filesize, filetype AS filetype, format AS format, resources_last_modified AS resources_last_modified, published AS published, resources_title AS resources_title, url AS url, substr(resources_title, 18, 6) AS period FROM FLATTEN bv_data_public_lu_operations_delta_list AS v ( v.resources) WHERE (v.format = 'xlsx' AND substr(v.resources_title, 18, 6) > '201710');
 
 ALTER VIEW iv_data_public_lu_operations_delta_list
  LAYOUT (bv_data_public_lu_operations_delta_list = [20, 20, 431, 627]);
