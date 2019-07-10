@@ -1,0 +1,229 @@
+﻿CREATE OR REPLACE WRAPPER JSON bv_data_public_lu_operations_delta_list
+    FOLDER = '/02 - base views'
+    DATASOURCENAME=ds_data_public_lu_operations_delta_list
+    TUPLEROOT '/JSONFile'
+    OUTPUTSCHEMA (jsonfile = 'JSONFile' : REGISTER OF (
+        acronym = 'acronym' : 'java.lang.String',
+        badges = 'badges' : ARRAY OF (
+            badges = 'badges' : REGISTER OF (
+                field_0 = 'field_0' : 'java.lang.String'
+            )
+        ),
+        created_at = 'created_at' : 'java.lang.String',
+        deleted = 'deleted' : 'java.lang.String',
+        description = 'description' : 'java.lang.String',
+        frequency = 'frequency' : 'java.lang.String',
+        frequency_date = 'frequency_date' : 'java.lang.String',
+        id = 'id' : 'java.lang.String',
+        last_modified = 'last_modified' : 'java.lang.String',
+        last_update = 'last_update' : 'java.lang.String',
+        license = 'license' : 'java.lang.String',
+        metrics = 'metrics' : REGISTER OF (
+            badges = 'badges' : 'java.lang.Integer',
+            discussions = 'discussions' : 'java.lang.Integer',
+            followers = 'followers' : 'java.lang.Integer',
+            issues = 'issues' : 'java.lang.Integer',
+            nb_hits = 'nb_hits' : 'java.lang.Integer',
+            nb_uniq_visitors = 'nb_uniq_visitors' : 'java.lang.Integer',
+            nb_visits = 'nb_visits' : 'java.lang.Integer',
+            reuses = 'reuses' : 'java.lang.Integer',
+            views = 'views' : 'java.lang.Integer'
+        ),
+        organization = 'organization' : REGISTER OF (
+            acronym = 'acronym' : 'java.lang.String',
+            class = 'class' : 'java.lang.String',
+            id = 'id' : 'java.lang.String',
+            logo = 'logo' : 'java.lang.String',
+            logo_thumbnail = 'logo_thumbnail' : 'java.lang.String',
+            name = 'name' : 'java.lang.String',
+            page = 'page' : 'java.lang.String',
+            slug = 'slug' : 'java.lang.String',
+            uri = 'uri' : 'java.lang.String'
+        ),
+        owner = 'owner' : 'java.lang.String',
+        page = 'page' : 'java.lang.String',
+        private = 'private' : 'java.lang.String',
+        resources = 'resources' : ARRAY OF (
+            resources = 'resources' : REGISTER OF (
+                checksum = 'checksum' : REGISTER OF (
+                    type = 'type' : 'java.lang.String',
+                    value = 'value' : 'java.lang.String'
+                ),
+                created_at = 'created_at' : 'java.lang.String',
+                filesize = 'filesize' : 'java.lang.Integer',
+                filetype = 'filetype' : 'java.lang.String',
+                format = 'format' : 'java.lang.String',
+                id = 'id' : 'java.lang.String',
+                last_modified = 'last_modified' : 'java.lang.String',
+                latest = 'latest' : 'java.lang.String',
+                metrics = 'metrics' : REGISTER OF (
+                    views = 'views' : 'java.lang.Integer',
+                    nb_hits = 'nb_hits' : 'java.lang.Integer',
+                    nb_uniq_visitors = 'nb_uniq_visitors' : 'java.lang.Integer',
+                    nb_visits = 'nb_visits' : 'java.lang.Integer'
+                ),
+                mime = 'mime' : 'java.lang.String',
+                preview_url = 'preview_url' : 'java.lang.String',
+                published = 'published' : 'java.lang.String',
+                title = 'title' : 'java.lang.String',
+                type = 'type' : 'java.lang.String',
+                url = 'url' : 'java.lang.String',
+                extras = 'extras' : REGISTER OF (
+                    checkavailable_0 = 'check:available' : 'java.lang.String',
+                    checkcountavailability_0 = 'check:count-availability' : 'java.lang.Integer',
+                    checkdate_0 = 'check:date' : 'java.lang.String',
+                    checkstatus_0 = 'check:status' : 'java.lang.Integer',
+                    checkurl_0 = 'check:url' : 'java.lang.String'
+                ),
+                description = 'description' : 'java.lang.String'
+            )
+        ),
+        slug = 'slug' : 'java.lang.String',
+        spatial = 'spatial' : 'java.lang.String',
+        tags = 'tags' : ARRAY OF (
+            tags = 'tags' : REGISTER OF (
+                field_0 = 'field_0' : 'java.lang.String'
+            )
+        ),
+        temporal_coverage = 'temporal_coverage' : REGISTER OF (
+            end = 'end' : 'java.lang.String',
+            start = 'start' : 'java.lang.String'
+        ),
+        title = 'title' : 'java.lang.String',
+        uri = 'uri' : 'java.lang.String'
+    )
+    );
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_badges_badges AS REGISTER OF (field_0:text);
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_badges AS ARRAY OF ds_data_public_lu_operations_delta_list_badges_badges;
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_metrics AS REGISTER OF (badges:int, discussions:int, followers:int, issues:int, nb_hits:int, nb_uniq_visitors:int, nb_visits:int, reuses:int, views:int);
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_organization AS REGISTER OF (acronym:text, class:text, id:text, logo:text, logo_thumbnail:text, name:text, page:text, slug:text, uri:text);
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_resources_resources_checksum AS REGISTER OF (type:text, value:text);
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_resources_resources_metrics AS REGISTER OF (views:int, nb_hits:int, nb_uniq_visitors:int, nb_visits:int);
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_resources_resources_extras AS REGISTER OF (checkavailable_0:text, checkcountavailability_0:int, checkdate_0:text, checkstatus_0:int, checkurl_0:text);
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_resources_resources AS REGISTER OF (checksum:ds_data_public_lu_operations_delta_list_resources_resources_checksum, created_at:text, filesize:int, filetype:text, format:text, id:text, last_modified:text, latest:text, metrics:ds_data_public_lu_operations_delta_list_resources_resources_metrics, mime:text, preview_url:text, published:text, title:text, type:text, url:text, extras:ds_data_public_lu_operations_delta_list_resources_resources_extras, description:text);
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_resources AS ARRAY OF ds_data_public_lu_operations_delta_list_resources_resources;
+
+CREATE OR REPLACE TYPE ds_data_public_lu_operations_delta_list_temporal_coverage AS REGISTER OF (end:text, start:text);
+
+CREATE OR REPLACE TABLE bv_data_public_lu_operations_delta_list I18N us_pst (
+        acronym:text, 
+        badges:ds_data_public_lu_operations_delta_list_badges, 
+        created_at:text, 
+        deleted:text, 
+        description:text, 
+        frequency:text, 
+        frequency_date:text, 
+        id:text, 
+        last_modified:text, 
+        last_update:text, 
+        license:text, 
+        metrics:ds_data_public_lu_operations_delta_list_metrics, 
+        organization:ds_data_public_lu_operations_delta_list_organization, 
+        owner:text, 
+        page:text, 
+        private:text, 
+        resources:ds_data_public_lu_operations_delta_list_resources, 
+        slug:text, 
+        spatial:text, 
+        tags:ds_data_public_lu_operations_delta_list_badges, 
+        temporal_coverage:ds_data_public_lu_operations_delta_list_temporal_coverage, 
+        title:text, 
+        uri:text
+    )
+    FOLDER = '/02 - base views'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_data_public_lu_operations_delta_list(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD acronym NOS ZERO ()
+             ADD badges NOS ZERO ()
+             ADD badges NOS ZERO ()
+             ADD badges.field_0 NOS ZERO ()
+             ADD created_at NOS ZERO ()
+             ADD deleted NOS ZERO ()
+             ADD description NOS ZERO ()
+             ADD frequency NOS ZERO ()
+             ADD frequency_date NOS ZERO ()
+             ADD id NOS ZERO ()
+             ADD last_modified NOS ZERO ()
+             ADD last_update NOS ZERO ()
+             ADD license NOS ZERO ()
+             ADD metrics NOS ZERO ()
+             ADD metrics.badges NOS ZERO ()
+             ADD metrics.discussions NOS ZERO ()
+             ADD metrics.followers NOS ZERO ()
+             ADD metrics.issues NOS ZERO ()
+             ADD metrics.nb_hits NOS ZERO ()
+             ADD metrics.nb_uniq_visitors NOS ZERO ()
+             ADD metrics.nb_visits NOS ZERO ()
+             ADD metrics.reuses NOS ZERO ()
+             ADD metrics.views NOS ZERO ()
+             ADD organization NOS ZERO ()
+             ADD organization.acronym NOS ZERO ()
+             ADD organization.class NOS ZERO ()
+             ADD organization.id NOS ZERO ()
+             ADD organization.logo NOS ZERO ()
+             ADD organization.logo_thumbnail NOS ZERO ()
+             ADD organization.name NOS ZERO ()
+             ADD organization.page NOS ZERO ()
+             ADD organization.slug NOS ZERO ()
+             ADD organization.uri NOS ZERO ()
+             ADD owner NOS ZERO ()
+             ADD page NOS ZERO ()
+             ADD private NOS ZERO ()
+             ADD resources NOS ZERO ()
+             ADD resources NOS ZERO ()
+             ADD resources.checksum NOS ZERO ()
+             ADD resources.checksum.type NOS ZERO ()
+             ADD resources.checksum.value NOS ZERO ()
+             ADD resources.created_at NOS ZERO ()
+             ADD resources.filesize NOS ZERO ()
+             ADD resources.filetype NOS ZERO ()
+             ADD resources.format NOS ZERO ()
+             ADD resources.id NOS ZERO ()
+             ADD resources.last_modified NOS ZERO ()
+             ADD resources.latest NOS ZERO ()
+             ADD resources.metrics NOS ZERO ()
+             ADD resources.metrics.views NOS ZERO ()
+             ADD resources.metrics.nb_hits NOS ZERO ()
+             ADD resources.metrics.nb_uniq_visitors NOS ZERO ()
+             ADD resources.metrics.nb_visits NOS ZERO ()
+             ADD resources.mime NOS ZERO ()
+             ADD resources.preview_url NOS ZERO ()
+             ADD resources.published NOS ZERO ()
+             ADD resources.title NOS ZERO ()
+             ADD resources.type NOS ZERO ()
+             ADD resources.url NOS ZERO ()
+             ADD resources.extras NOS ZERO ()
+             ADD resources.extras.checkavailable_0 NOS ZERO ()
+             ADD resources.extras.checkcountavailability_0 NOS ZERO ()
+             ADD resources.extras.checkdate_0 NOS ZERO ()
+             ADD resources.extras.checkstatus_0 NOS ZERO ()
+             ADD resources.extras.checkurl_0 NOS ZERO ()
+             ADD resources.description NOS ZERO ()
+             ADD slug NOS ZERO ()
+             ADD spatial NOS ZERO ()
+             ADD tags NOS ZERO ()
+             ADD tags NOS ZERO ()
+             ADD tags.field_0 NOS ZERO ()
+             ADD temporal_coverage NOS ZERO ()
+             ADD temporal_coverage.end NOS ZERO ()
+             ADD temporal_coverage.start NOS ZERO ()
+             ADD title NOS ZERO ()
+             ADD uri NOS ZERO ()
+        )
+        OUTPUTLIST (acronym, badges, created_at, deleted, description, frequency, frequency_date, id, last_modified, last_update, license, metrics, organization, owner, page, private, resources, slug, spatial, tags, temporal_coverage, title, uri
+        )
+        WRAPPER (json bv_data_public_lu_operations_delta_list)
+    );
+

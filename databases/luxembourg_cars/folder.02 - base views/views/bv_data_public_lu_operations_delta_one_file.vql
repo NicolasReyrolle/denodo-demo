@@ -1,0 +1,126 @@
+﻿CREATE OR REPLACE TABLE bv_data_public_lu_operations_delta_one_file I18N us_pst (
+        codeop:text (sourcetypeid = '12'), 
+        catstc:int (sourcetypeid = '4'), 
+        codcar:text (sourcetypeid = '12'), 
+        libcar:text (sourcetypeid = '12'), 
+        cateu:text (sourcetypeid = '12'), 
+        coul:text (sourcetypeid = '12'), 
+        induti:text (sourcetypeid = '12'), 
+        paypvn:text (sourcetypeid = '12'), 
+        codmrq:int (sourcetypeid = '4'), 
+        libmrq:text (sourcetypeid = '12'), 
+        typusi:text (sourcetypeid = '12'), 
+        typcom:text (sourcetypeid = '12'), 
+        pvrnum:text (sourcetypeid = '12'), 
+        pvrvar:text (sourcetypeid = '12'), 
+        pvrver:text (sourcetypeid = '12'), 
+        datcirprm:int (sourcetypeid = '4'), 
+        datcir_gd:int (sourcetypeid = '4'), 
+        datcir:int (sourcetypeid = '4'), 
+        dathorcir:int (sourcetypeid = '4'), 
+        mvid:int (sourcetypeid = '4'), 
+        mma:int (sourcetypeid = '4'), 
+        mmaens:int (sourcetypeid = '4'), 
+        mmaatt:int (sourcetypeid = '4'), 
+        mmarsf:int (sourcetypeid = '4'), 
+        mmaraf:int (sourcetypeid = '4'), 
+        i4x4:text (sourcetypeid = '12'), 
+        abs:int (sourcetypeid = '4'), 
+        asr:int (sourcetypeid = '4'), 
+        plaava:int (sourcetypeid = '4'), 
+        plaarr:int (sourcetypeid = '4'), 
+        plasav:text (sourcetypeid = '12'), 
+        plasar:text (sourcetypeid = '12'), 
+        pladeb:text (sourcetypeid = '12'), 
+        plaass:text (sourcetypeid = '12'), 
+        lon:int (sourcetypeid = '4'), 
+        lar:int (sourcetypeid = '4'), 
+        hau:int (sourcetypeid = '4'), 
+        essim:int (sourcetypeid = '4'), 
+        estan:int (sourcetypeid = '4'), 
+        estri:int (sourcetypeid = '4'), 
+        empmax:int (sourcetypeid = '4'), 
+        lares1:int (sourcetypeid = '4'), 
+        lares2:int (sourcetypeid = '4'), 
+        typmot:text (sourcetypeid = '12'), 
+        codcrb:int (sourcetypeid = '4'), 
+        libcrb:text (sourcetypeid = '12'), 
+        nbrcyl:int (sourcetypeid = '4'), 
+        pkw:float (sourcetypeid = '6'), 
+        cyd:int (sourcetypeid = '4'), 
+        infouti:text (sourcetypeid = '12'), 
+        infco2:int (sourcetypeid = '4'), 
+        l100km:float (sourcetypeid = '6'), 
+        infparticule:float (sourcetypeid = '6'), 
+        infnox:float (sourcetypeid = '6'), 
+        eunorm:text (sourcetypeid = '12'), 
+        url:text
+    )
+    FOLDER = '/02 - base views'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD ds_data_public_lu_operations_delta_one_file(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD codeop (any) OPT ANY
+             ADD catstc (any) OPT ANY
+             ADD codcar (any) OPT ANY
+             ADD libcar (any) OPT ANY
+             ADD cateu (any) OPT ANY
+             ADD coul (any) OPT ANY
+             ADD induti (any) OPT ANY
+             ADD paypvn (any) OPT ANY
+             ADD codmrq (any) OPT ANY
+             ADD libmrq (any) OPT ANY
+             ADD typusi (any) OPT ANY
+             ADD typcom (any) OPT ANY
+             ADD pvrnum (any) OPT ANY
+             ADD pvrvar (any) OPT ANY
+             ADD pvrver (any) OPT ANY
+             ADD datcirprm (any) OPT ANY
+             ADD datcir_gd (any) OPT ANY
+             ADD datcir (any) OPT ANY
+             ADD dathorcir (any) OPT ANY
+             ADD mvid (any) OPT ANY
+             ADD mma (any) OPT ANY
+             ADD mmaens (any) OPT ANY
+             ADD mmaatt (any) OPT ANY
+             ADD mmarsf (any) OPT ANY
+             ADD mmaraf (any) OPT ANY
+             ADD i4x4 (any) OPT ANY
+             ADD abs (any) OPT ANY
+             ADD asr (any) OPT ANY
+             ADD plaava (any) OPT ANY
+             ADD plaarr (any) OPT ANY
+             ADD plasav (any) OPT ANY
+             ADD plasar (any) OPT ANY
+             ADD pladeb (any) OPT ANY
+             ADD plaass (any) OPT ANY
+             ADD lon (any) OPT ANY
+             ADD lar (any) OPT ANY
+             ADD hau (any) OPT ANY
+             ADD essim (any) OPT ANY
+             ADD estan (any) OPT ANY
+             ADD estri (any) OPT ANY
+             ADD empmax (any) OPT ANY
+             ADD lares1 (any) OPT ANY
+             ADD lares2 (any) OPT ANY
+             ADD typmot (any) OPT ANY
+             ADD codcrb (any) OPT ANY
+             ADD libcrb (any) OPT ANY
+             ADD nbrcyl (any) OPT ANY
+             ADD pkw (any) OPT ANY
+             ADD cyd (any) OPT ANY
+             ADD infouti (any) OPT ANY
+             ADD infco2 (any) OPT ANY
+             ADD l100km (any) OPT ANY
+             ADD infparticule (any) OPT ANY
+             ADD infnox (any) OPT ANY
+             ADD eunorm (any) OPT ANY
+             ADD url (=) OBL ONE
+        )
+        OUTPUTLIST (abs, asr, cateu, catstc, codcar, codcrb, codeop, codmrq, coul, cyd, datcir, datcir_gd, datcirprm, dathorcir, empmax, essim, estan, estri, eunorm, hau, i4x4, induti, infco2, infnox, infouti, infparticule, l100km, lar, lares1, lares2, libcar, libcrb, libmrq, lon, mma, mmaatt, mmaens, mmaraf, mmarsf, mvid, nbrcyl, paypvn, pkw, plaarr, plaass, plaava, pladeb, plasar, plasav, pvrnum, pvrvar, pvrver, typcom, typmot, typusi
+        )
+        WRAPPER (custom ds_data_public_lu_operations_delta_one_file)
+    );
+
