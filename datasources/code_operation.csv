@@ -1,0 +1,8 @@
+code_operation;french_label;english_label
+N;Nouvelle Immatriculation;New registration
+I;Importation;Import
+T; Transcription / vente àl'intérieur du Pays; Inland Transfer
+E; Exportation (immatriculé >= 1 ans); Export (registered >= 1 year)
+H;Hors circulation; Vehicle registration suspension
+E1; Exportation; Export
+
