@@ -1,0 +1,33 @@
+﻿CREATE OR REPLACE WRAPPER DF bv_code_operation
+    FOLDER = '/02 - base views'
+    DATASOURCENAME=ds_code_operation
+    OUTPUTSCHEMA (
+        code_operation = 'code_operation' (OPT),
+        french_label = 'french_label' (OPT),
+        english_label = 'english_label' (OPT),
+        operation_type = 'operation_type' (OPT)
+    );
+
+CREATE OR REPLACE TABLE bv_code_operation I18N us_pst (
+        code_operation:text, 
+        french_label:text, 
+        english_label:text, 
+        operation_type:text
+    )
+    FOLDER = '/02 - base views'
+    PRIMARY KEY ( 'code_operation' )
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_code_operation(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD code_operation (=,in) OPT ANY
+             ADD french_label (=,in) OPT ANY
+             ADD english_label (=,in) OPT ANY
+             ADD operation_type (=,in) OPT ANY
+        )
+        OUTPUTLIST (code_operation, english_label, french_label, operation_type
+        )
+        WRAPPER (df bv_code_operation)
+    );
+

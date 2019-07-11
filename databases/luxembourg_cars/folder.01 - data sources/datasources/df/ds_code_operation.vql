@@ -1,0 +1,8 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE DATASOURCE DF ds_code_operation
+    FOLDER = '/01 - data sources'
+    ROUTE LOCAL 'LocalConnection' '${databases.luxembourg_cars.folder.01 - data sources.datasources.df.ds_code_operation.ROUTE.LOCAL.PATH}'
+    COLUMNDELIMITER = ';'
+    ENDOFLINEDELIMITER = '\n'
+    HEADER = TRUE;
+
