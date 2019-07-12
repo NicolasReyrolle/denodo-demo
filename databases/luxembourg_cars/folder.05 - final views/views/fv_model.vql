@@ -1,6 +1,6 @@
 ﻿CREATE OR REPLACE VIEW fv_model FOLDER = '/05 - final views'
-    PRIMARY KEY ( 'model_id' ) AS SELECT DISTINCT dv_immatriculations.model_id AS model_id, dv_immatriculations.brand_code AS brand_code, dv_immatriculations.model AS model FROM dv_immatriculations;
+    PRIMARY KEY ( 'model_id' ) AS SELECT model_id AS model_id, brand_code AS brand_code, max(typcom) AS model FROM dv_immatriculations_incremental GROUP BY model_id, brand_code;
 
 ALTER VIEW fv_model
- LAYOUT (dv_immatriculations = [20, 20, 200, 566]);
+ LAYOUT (dv_immatriculations_incremental = [20, 20, 255, 606]);
 

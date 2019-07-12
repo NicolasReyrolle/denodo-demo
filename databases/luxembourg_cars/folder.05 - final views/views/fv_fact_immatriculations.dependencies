@@ -1,4 +1,5 @@
 ﻿/databases/luxembourg_cars/folder.05 - final views/05 - final views.vql
+/extensions/jars/denodo-xtrafuncs-vdp-string-7.0.vql
 /databases/luxembourg_cars/folder.04 - derived views/04 - derived views.vql
 /databases/luxembourg_cars/folder.03 - integration views/03 - integration views.vql
 /databases/luxembourg_cars/folder.02 - base views/02 - base views.vql
@@ -13,3 +14,7 @@
 /databases/luxembourg_cars/folder.02 - base views/views/bv_immatriculations_first_load.vql
 /databases/luxembourg_cars/folder.03 - integration views/views/iv_immatriculations_initial_load.vql
 /databases/luxembourg_cars/folder.04 - derived views/views/dv_immatriculations_incremental.vql
+/databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_fuel_mapping.vql
+/databases/luxembourg_cars/folder.02 - base views/views/bv_fuel_mapping.vql
+/databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_code_operation.vql
+/databases/luxembourg_cars/folder.02 - base views/views/bv_code_operation.vql

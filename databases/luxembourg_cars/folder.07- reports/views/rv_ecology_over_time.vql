@@ -1,5 +1,4 @@
-﻿CREATE OR REPLACE VIEW rv_ecology_over_time FOLDER = '/07- reports'
-    PRIMARY KEY ( 'period' ) AS SELECT period AS period, avg(co2_emissions) AS avg_co2, avg(cylinders_count) AS avg_cylinder_count FROM fact_car_details GROUP BY period;
+﻿CREATE OR REPLACE VIEW rv_ecology_over_time FOLDER = '/07- reports' AS SELECT fact_car_details.first_registration_period AS first_registration_period, avg(fact_car_details.cylinders_count) AS avg_cylinder_count, avg(fact_car_details.co2_emissions) AS avg_co2, avg(fact_car_details.mass_running_order) AS avg_mass_running_order, avg(fact_car_details.engine_capacity) AS avg_engine_capacity, sum(fact_car_details.number) AS count FROM fact_car_details WHERE first_registration_period is not null  GROUP BY fact_car_details.first_registration_period;
 
 ALTER VIEW rv_ecology_over_time
  LAYOUT (fact_car_details = [20, 20, 200, 226]);
