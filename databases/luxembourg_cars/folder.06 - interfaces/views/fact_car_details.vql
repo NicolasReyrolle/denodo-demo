@@ -1,5 +1,6 @@
 ﻿CREATE OR REPLACE INTERFACE VIEW fact_car_details (
         period:text,
+        first_registration_period:text,
         model_id:text (sourcetyperadix = '10', sourcetypesize = '32', sourcetypeid = '12'),
         mass_running_order:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
         fuel_type:text (sourcetyperadix = '10', sourcetypesize = '40', description = 'Fuel description', sourcetypeid = '12'),
@@ -18,6 +19,7 @@
     )
     SET IMPLEMENTATION fv_fact_immatriculations(
         period = period,
+        first_registration_period = first_registration_period,
         model_id = model_id,
         mass_running_order = mvid,
         fuel_type = fuel_type,

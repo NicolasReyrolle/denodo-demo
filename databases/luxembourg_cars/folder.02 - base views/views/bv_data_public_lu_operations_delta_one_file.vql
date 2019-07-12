@@ -57,6 +57,9 @@
         url:text
     )
     FOLDER = '/02 - base views'
+    DESCRIPTION = 'Sample file for testing : 
+
+https://download.data.public.lu/resources/operations-delta-des-vehicules-au-luxembourg/20190702-165852/operations-delta-201906.xlsx'
     CACHE OFF
     TIMETOLIVEINCACHE DEFAULT
     ADD SEARCHMETHOD ds_data_public_lu_operations_delta_one_file(
