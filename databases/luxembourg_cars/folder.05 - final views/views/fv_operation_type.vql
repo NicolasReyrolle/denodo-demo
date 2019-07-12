@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW fv_operation_type FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'code_operation' ) AS SELECT bv_code_operation.code_operation AS code_operation, bv_code_operation.french_label AS operation_label_french, bv_code_operation.english_label AS operation_label_english, bv_code_operation.operation_type AS operation_type FROM bv_code_operation;
+
+ALTER VIEW fv_operation_type
+ LAYOUT (bv_code_operation = [20, 20, 203, 106]);
+

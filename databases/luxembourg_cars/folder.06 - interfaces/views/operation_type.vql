@@ -1,0 +1,12 @@
+﻿CREATE OR REPLACE INTERFACE VIEW operation_type (
+        code_operation:text,
+        operation_label_french:text,
+        operation_label_english:text,
+        operation_type:text
+    )
+    SET IMPLEMENTATION fv_operation_type
+    FOLDER = '/06 - interfaces';
+
+ALTER VIEW operation_type
+ LAYOUT (fv_operation_type = [723, 20, 249, 106]);
+
