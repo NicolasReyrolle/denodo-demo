@@ -1,0 +1,230 @@
+﻿CREATE OR REPLACE WRAPPER JSON bv_countries
+    FOLDER = '/02 - base views'
+    DATASOURCENAME=ds_countries
+    TUPLEROOT '/JSONFile'
+    OUTPUTSCHEMA (jsonfile = 'JSONFile' : REGISTER OF (
+        jsonarray = 'JSONArray' : ARRAY OF (
+            jsonarray = 'JSONArray' : REGISTER OF (
+                name = 'name' : 'java.lang.String',
+                topleveldomain = 'topLevelDomain' : ARRAY OF (
+                    topleveldomain = 'topLevelDomain' : REGISTER OF (
+                        field_0 = 'field_0' : 'java.lang.String'
+                    )
+                ),
+                alpha2code = 'alpha2Code' : 'java.lang.String',
+                alpha3code = 'alpha3Code' : 'java.lang.String',
+                callingcodes = 'callingCodes' : ARRAY OF (
+                    callingcodes = 'callingCodes' : REGISTER OF (
+                        field_0 = 'field_0' : 'java.lang.String'
+                    )
+                ),
+                capital = 'capital' : 'java.lang.String',
+                altspellings = 'altSpellings' : ARRAY OF (
+                    altspellings = 'altSpellings' : REGISTER OF (
+                        field_0 = 'field_0' : 'java.lang.String'
+                    )
+                ),
+                region = 'region' : 'java.lang.String',
+                subregion = 'subregion' : 'java.lang.String',
+                population = 'population' : 'java.lang.Integer',
+                latlng = 'latlng' : ARRAY OF (
+                    latlng = 'latlng' : REGISTER OF (
+                        field_0 = 'field_0' : 'java.lang.Double'
+                    )
+                ),
+                demonym = 'demonym' : 'java.lang.String',
+                area = 'area' : 'java.lang.Double',
+                gini = 'gini' : 'java.lang.Double',
+                timezones = 'timezones' : ARRAY OF (
+                    timezones = 'timezones' : REGISTER OF (
+                        field_0 = 'field_0' : 'java.lang.String'
+                    )
+                ),
+                borders = 'borders' : ARRAY OF (
+                    borders = 'borders' : REGISTER OF (
+                        field_0 = 'field_0' : 'java.lang.String'
+                    )
+                ),
+                nativename = 'nativeName' : 'java.lang.String',
+                numericcode = 'numericCode' : 'java.lang.String',
+                currencies = 'currencies' : ARRAY OF (
+                    currencies = 'currencies' : REGISTER OF (
+                        code = 'code' : 'java.lang.String',
+                        name = 'name' : 'java.lang.String',
+                        symbol = 'symbol' : 'java.lang.String'
+                    )
+                ),
+                languages = 'languages' : ARRAY OF (
+                    languages = 'languages' : REGISTER OF (
+                        iso639_1 = 'iso639_1' : 'java.lang.String',
+                        iso639_2 = 'iso639_2' : 'java.lang.String',
+                        name = 'name' : 'java.lang.String',
+                        nativename = 'nativeName' : 'java.lang.String'
+                    )
+                ),
+                translations = 'translations' : REGISTER OF (
+                    de = 'de' : 'java.lang.String',
+                    es = 'es' : 'java.lang.String',
+                    fr = 'fr' : 'java.lang.String',
+                    ja = 'ja' : 'java.lang.String',
+                    it = 'it' : 'java.lang.String',
+                    br = 'br' : 'java.lang.String',
+                    pt = 'pt' : 'java.lang.String',
+                    nl = 'nl' : 'java.lang.String',
+                    hr = 'hr' : 'java.lang.String',
+                    fa = 'fa' : 'java.lang.String'
+                ),
+                flag = 'flag' : 'java.lang.String',
+                regionalblocs = 'regionalBlocs' : ARRAY OF (
+                    regionalblocs = 'regionalBlocs' : REGISTER OF (
+                        acronym = 'acronym' : 'java.lang.String',
+                        name = 'name' : 'java.lang.String',
+                        otheracronyms = 'otherAcronyms' : ARRAY OF (
+                            otheracronyms = 'otherAcronyms' : REGISTER OF (
+                                field_0 = 'field_0' : 'java.lang.String'
+                            )
+                        ),
+                        othernames = 'otherNames' : ARRAY OF (
+                            othernames = 'otherNames' : REGISTER OF (
+                                field_0 = 'field_0' : 'java.lang.String'
+                            )
+                        )
+                    )
+                ),
+                cioc = 'cioc' : 'java.lang.String'
+            )
+        )
+    )
+    );
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_topleveldomain_topleveldomain AS REGISTER OF (field_0:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_topleveldomain AS ARRAY OF ds_countries_jsonarray_jsonarray_topleveldomain_topleveldomain;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_callingcodes_callingcodes AS REGISTER OF (field_0:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_callingcodes AS ARRAY OF ds_countries_jsonarray_jsonarray_callingcodes_callingcodes;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_altspellings_altspellings AS REGISTER OF (field_0:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_altspellings AS ARRAY OF ds_countries_jsonarray_jsonarray_altspellings_altspellings;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_latlng_latlng AS REGISTER OF (field_0:double);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_latlng AS ARRAY OF ds_countries_jsonarray_jsonarray_latlng_latlng;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_timezones_timezones AS REGISTER OF (field_0:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_timezones AS ARRAY OF ds_countries_jsonarray_jsonarray_timezones_timezones;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_borders_borders AS REGISTER OF (field_0:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_borders AS ARRAY OF ds_countries_jsonarray_jsonarray_borders_borders;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_currencies_currencies AS REGISTER OF (code:text, name:text, symbol:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_currencies AS ARRAY OF ds_countries_jsonarray_jsonarray_currencies_currencies;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_languages_languages AS REGISTER OF (iso639_1:text, iso639_2:text, name:text, nativename:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_languages AS ARRAY OF ds_countries_jsonarray_jsonarray_languages_languages;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_translations AS REGISTER OF (de:text, es:text, fr:text, ja:text, it:text, br:text, pt:text, nl:text, hr:text, fa:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs_otheracronyms_otheracronyms AS REGISTER OF (field_0:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs_otheracronyms AS ARRAY OF ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs_otheracronyms_otheracronyms;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs_othernames_othernames AS REGISTER OF (field_0:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs_othernames AS ARRAY OF ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs_othernames_othernames;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs AS REGISTER OF (acronym:text, name:text, otheracronyms:ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs_otheracronyms, othernames:ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs_othernames);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray_regionalblocs AS ARRAY OF ds_countries_jsonarray_jsonarray_regionalblocs_regionalblocs;
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray_jsonarray AS REGISTER OF (name:text, topleveldomain:ds_countries_jsonarray_jsonarray_topleveldomain, alpha2code:text, alpha3code:text, callingcodes:ds_countries_jsonarray_jsonarray_callingcodes, capital:text, altspellings:ds_countries_jsonarray_jsonarray_altspellings, region:text, subregion:text, population:int, latlng:ds_countries_jsonarray_jsonarray_latlng, demonym:text, area:double, gini:double, timezones:ds_countries_jsonarray_jsonarray_timezones, borders:ds_countries_jsonarray_jsonarray_borders, nativename:text, numericcode:text, currencies:ds_countries_jsonarray_jsonarray_currencies, languages:ds_countries_jsonarray_jsonarray_languages, translations:ds_countries_jsonarray_jsonarray_translations, flag:text, regionalblocs:ds_countries_jsonarray_jsonarray_regionalblocs, cioc:text);
+
+CREATE OR REPLACE TYPE ds_countries_jsonarray AS ARRAY OF ds_countries_jsonarray_jsonarray;
+
+CREATE OR REPLACE TABLE bv_countries I18N us_pst (
+        jsonarray:ds_countries_jsonarray
+    )
+    FOLDER = '/02 - base views'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_countries(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD jsonarray NOS ZERO ()
+             ADD jsonarray NOS ZERO ()
+             ADD jsonarray.name NOS ZERO ()
+             ADD jsonarray.topleveldomain NOS ZERO ()
+             ADD jsonarray.topleveldomain NOS ZERO ()
+             ADD jsonarray.topleveldomain.field_0 NOS ZERO ()
+             ADD jsonarray.alpha2code NOS ZERO ()
+             ADD jsonarray.alpha3code NOS ZERO ()
+             ADD jsonarray.callingcodes NOS ZERO ()
+             ADD jsonarray.callingcodes NOS ZERO ()
+             ADD jsonarray.callingcodes.field_0 NOS ZERO ()
+             ADD jsonarray.capital NOS ZERO ()
+             ADD jsonarray.altspellings NOS ZERO ()
+             ADD jsonarray.altspellings NOS ZERO ()
+             ADD jsonarray.altspellings.field_0 NOS ZERO ()
+             ADD jsonarray.region NOS ZERO ()
+             ADD jsonarray.subregion NOS ZERO ()
+             ADD jsonarray.population NOS ZERO ()
+             ADD jsonarray.latlng NOS ZERO ()
+             ADD jsonarray.latlng NOS ZERO ()
+             ADD jsonarray.latlng.field_0 NOS ZERO ()
+             ADD jsonarray.demonym NOS ZERO ()
+             ADD jsonarray.area NOS ZERO ()
+             ADD jsonarray.gini NOS ZERO ()
+             ADD jsonarray.timezones NOS ZERO ()
+             ADD jsonarray.timezones NOS ZERO ()
+             ADD jsonarray.timezones.field_0 NOS ZERO ()
+             ADD jsonarray.borders NOS ZERO ()
+             ADD jsonarray.borders NOS ZERO ()
+             ADD jsonarray.borders.field_0 NOS ZERO ()
+             ADD jsonarray.nativename NOS ZERO ()
+             ADD jsonarray.numericcode NOS ZERO ()
+             ADD jsonarray.currencies NOS ZERO ()
+             ADD jsonarray.currencies NOS ZERO ()
+             ADD jsonarray.currencies.code NOS ZERO ()
+             ADD jsonarray.currencies.name NOS ZERO ()
+             ADD jsonarray.currencies.symbol NOS ZERO ()
+             ADD jsonarray.languages NOS ZERO ()
+             ADD jsonarray.languages NOS ZERO ()
+             ADD jsonarray.languages.iso639_1 NOS ZERO ()
+             ADD jsonarray.languages.iso639_2 NOS ZERO ()
+             ADD jsonarray.languages.name NOS ZERO ()
+             ADD jsonarray.languages.nativename NOS ZERO ()
+             ADD jsonarray.translations NOS ZERO ()
+             ADD jsonarray.translations.de NOS ZERO ()
+             ADD jsonarray.translations.es NOS ZERO ()
+             ADD jsonarray.translations.fr NOS ZERO ()
+             ADD jsonarray.translations.ja NOS ZERO ()
+             ADD jsonarray.translations.it NOS ZERO ()
+             ADD jsonarray.translations.br NOS ZERO ()
+             ADD jsonarray.translations.pt NOS ZERO ()
+             ADD jsonarray.translations.nl NOS ZERO ()
+             ADD jsonarray.translations.hr NOS ZERO ()
+             ADD jsonarray.translations.fa NOS ZERO ()
+             ADD jsonarray.flag NOS ZERO ()
+             ADD jsonarray.regionalblocs NOS ZERO ()
+             ADD jsonarray.regionalblocs NOS ZERO ()
+             ADD jsonarray.regionalblocs.acronym NOS ZERO ()
+             ADD jsonarray.regionalblocs.name NOS ZERO ()
+             ADD jsonarray.regionalblocs.otheracronyms NOS ZERO ()
+             ADD jsonarray.regionalblocs.otheracronyms NOS ZERO ()
+             ADD jsonarray.regionalblocs.otheracronyms.field_0 NOS ZERO ()
+             ADD jsonarray.regionalblocs.othernames NOS ZERO ()
+             ADD jsonarray.regionalblocs.othernames NOS ZERO ()
+             ADD jsonarray.regionalblocs.othernames.field_0 NOS ZERO ()
+             ADD jsonarray.cioc NOS ZERO ()
+        )
+        OUTPUTLIST (jsonarray
+        )
+        WRAPPER (json bv_countries)
+    );
+

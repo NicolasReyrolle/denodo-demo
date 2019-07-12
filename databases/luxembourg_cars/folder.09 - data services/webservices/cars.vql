@@ -10,17 +10,72 @@
     DEFAULTREPRESENTATION = HTML
     SUPPORTEDREPRESENTATIONS (HTML, XML, JSON)
     RESOURCES (
+        VIEW bodywork FIELDS (
+            bodywork_code : 'text', 
+            bodywork_name : 'text', 
+            bodywork_category : 'text', 
+            bodywork_type : 'text'
+        ),
         VIEW brand FIELDS (
             brand_code : 'int', 
             brand_name : 'text'
         ),
+        VIEW countries FIELDS (
+            iso_code_2 : 'text', 
+            iso_code_3 : 'text', 
+            label_en : 'text', 
+            label_fr : 'text'
+        ),
+        VIEW current_period FIELDS (
+            period : 'text'
+        ),
+        VIEW european_category FIELDS (
+            european_category_code : 'text', 
+            european_category_description : 'text', 
+            european_category_type : 'text'
+        ),
+        VIEW fact_car_details FIELDS (
+            period : 'text', 
+            first_registration_period : 'text', 
+            model_id : 'text', 
+            mass_running_order : 'int', 
+            fuel_type : 'text', 
+            cylinders_count : 'int', 
+            net_power_kw : 'int', 
+            engine_capacity : 'int', 
+            co2_emissions : 'int', 
+            fuel_consumption : 'decimal', 
+            bodywork_code : 'text', 
+            first_registration_date : 'localdate', 
+            first_registration_date_lux : 'localdate', 
+            number : 'int', 
+            usage_code : 'text', 
+            european_category_code : 'text', 
+            statec_category : 'int', 
+            origin_country : 'text'
+        ),
         VIEW model FIELDS (
+            model_id : 'text', 
             brand_code : 'int', 
-            model : 'text', 
-            model_id : 'text'
+            model : 'text'
+        ),
+        VIEW operation_type FIELDS (
+            code_operation : 'text', 
+            operation_label_french : 'text', 
+            operation_label_english : 'text', 
+            operation_type : 'text'
+        ),
+        VIEW statec_category FIELDS (
+            statec_code : 'int', 
+            statec_label_en : 'text', 
+            statec_label_fr : 'text'
+        ),
+        VIEW usage_information FIELDS (
+            usage_code : 'text', 
+            usage_description : 'text'
         )
     )
-    ASSOCIATIONS ( brand_model )
+    ASSOCIATIONS ( brand_model, bodywork_fact_car_details, usage_information_fact_car_details, statec_category_fact_car_details, model_car_details, fact_car_details_countries )
     OPTIONS ( NULLVALUESASEMPTYXMLELEMENTS = false ) 
     OPENAPI2 ( API_VERSION = '1.0.0' ) 
     FOLDER = '/09 - data services';

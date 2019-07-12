@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW iv_countries FOLDER = '/03 - integration views'
+    PRIMARY KEY ( 'alpha2code' ) AS SELECT alpha2code AS alpha2code, alpha3code AS alpha3code, name AS label_en, (translations).fr AS label_fr FROM FLATTEN bv_countries AS v ( v.jsonarray);
+
+ALTER VIEW iv_countries
+ LAYOUT (bv_countries = [20, 20, 410, 45]);
+

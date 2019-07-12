@@ -1,0 +1,12 @@
+﻿CREATE OR REPLACE INTERFACE VIEW countries (
+        iso_code_2:text,
+        iso_code_3:text,
+        label_en:text,
+        label_fr:text
+    )
+    SET IMPLEMENTATION fv_countries
+    FOLDER = '/06 - interfaces';
+
+ALTER VIEW countries
+ LAYOUT (fv_countries = [563, 20, 200, 106]);
+

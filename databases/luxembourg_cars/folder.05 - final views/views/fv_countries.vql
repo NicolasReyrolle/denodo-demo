@@ -1,0 +1,10 @@
+﻿CREATE OR REPLACE VIEW fv_countries FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'iso_code_2' ) AS SELECT iv_countries.alpha2code AS iso_code_2, iv_countries.alpha3code AS iso_code_3, iv_countries.label_en AS label_en, iv_countries.label_fr AS label_fr FROM iv_countries;
+
+ALTER VIEW fv_countries
+ LAYOUT (iv_countries = [20, 20, 200, 106]);
+
+ALTER VIEW fv_countries
+ CACHE PARTIAL
+     BATCHSIZEINCACHE DEFAULT TIMETOLIVEINCACHE DEFAULT;
+
