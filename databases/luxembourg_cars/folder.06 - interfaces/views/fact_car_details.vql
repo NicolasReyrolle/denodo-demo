@@ -16,7 +16,8 @@
         usage_code:text,
         european_category_code:text,
         statec_category:int,
-        origin_country:text
+        origin_country:text,
+        operation_type:text
     )
     SET IMPLEMENTATION fv_fact_immatriculations(
         period = period,
@@ -36,11 +37,12 @@
         usage_code = induti,
         european_category_code = cateu,
         statec_category = catstc,
-        origin_country = paypvn    
+        origin_country = paypvn,
+        operation_type = codeop    
 )
     FOLDER = '/06 - interfaces'
     DESCRIPTION = 'Car details' ;
 
 ALTER VIEW fact_car_details
- LAYOUT (fv_fact_immatriculations = [615, 20, 205, 298]);
+ LAYOUT (fv_fact_immatriculations = [615, 20, 205, 121]);
 

@@ -33,15 +33,10 @@
 /databases/luxembourg_cars/folder.02 - base views/views/bv_code_ec_cateu.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_european_category.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/european_category.vql
-/extensions/jars/denodo-xtrafuncs-vdp-string-7.0.vql
-/databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_fuel_mapping.vql
-/databases/luxembourg_cars/folder.02 - base views/views/bv_fuel_mapping.vql
-/databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_code_operation.vql
-/databases/luxembourg_cars/folder.02 - base views/views/bv_code_operation.vql
-/databases/luxembourg_cars/folder.05 - final views/views/fv_fact_immatriculations.vql
-/databases/luxembourg_cars/folder.06 - interfaces/views/fact_car_details.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_model.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/model.vql
+/databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_code_operation.vql
+/databases/luxembourg_cars/folder.02 - base views/views/bv_code_operation.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_operation_type.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/operation_type.vql
 /databases/luxembourg_cars/folder.01 - data sources/datasources/json/ds_statec.vql
@@ -53,3 +48,7 @@
 /databases/luxembourg_cars/folder.02 - base views/views/bv_code_ec_induti.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_usage_indicator.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/usage_information.vql
+/databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_fuel_mapping.vql
+/databases/luxembourg_cars/folder.02 - base views/views/bv_fuel_mapping.vql
+/databases/luxembourg_cars/folder.05 - final views/views/fv_fact_immatriculations.vql
+/databases/luxembourg_cars/folder.06 - interfaces/views/fact_car_details.vql

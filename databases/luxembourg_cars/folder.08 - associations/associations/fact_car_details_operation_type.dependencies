@@ -21,8 +21,5 @@
 /databases/luxembourg_cars/folder.02 - base views/views/bv_code_operation.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_fact_immatriculations.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/fact_car_details.vql
-/databases/luxembourg_cars/folder.01 - data sources/datasources/json/ds_countries.vql
-/databases/luxembourg_cars/folder.02 - base views/views/bv_countries.vql
-/databases/luxembourg_cars/folder.03 - integration views/views/iv_countries.vql
-/databases/luxembourg_cars/folder.05 - final views/views/fv_countries.vql
-/databases/luxembourg_cars/folder.06 - interfaces/views/countries.vql
+/databases/luxembourg_cars/folder.05 - final views/views/fv_operation_type.vql
+/databases/luxembourg_cars/folder.06 - interfaces/views/operation_type.vql

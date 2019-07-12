@@ -34,26 +34,6 @@
             european_category_description : 'text', 
             european_category_type : 'text'
         ),
-        VIEW fact_car_details FIELDS (
-            period : 'text', 
-            first_registration_period : 'text', 
-            model_id : 'text', 
-            mass_running_order : 'int', 
-            fuel_type : 'text', 
-            cylinders_count : 'int', 
-            net_power_kw : 'int', 
-            engine_capacity : 'int', 
-            co2_emissions : 'int', 
-            fuel_consumption : 'decimal', 
-            bodywork_code : 'text', 
-            first_registration_date : 'localdate', 
-            first_registration_date_lux : 'localdate', 
-            number : 'int', 
-            usage_code : 'text', 
-            european_category_code : 'text', 
-            statec_category : 'int', 
-            origin_country : 'text'
-        ),
         VIEW model FIELDS (
             model_id : 'text', 
             brand_code : 'int', 
@@ -73,9 +53,30 @@
         VIEW usage_information FIELDS (
             usage_code : 'text', 
             usage_description : 'text'
+        ),
+        VIEW fact_car_details FIELDS (
+            period : 'text', 
+            first_registration_period : 'text', 
+            model_id : 'text', 
+            mass_running_order : 'int', 
+            fuel_type : 'text', 
+            cylinders_count : 'int', 
+            net_power_kw : 'int', 
+            engine_capacity : 'int', 
+            co2_emissions : 'int', 
+            fuel_consumption : 'decimal', 
+            bodywork_code : 'text', 
+            first_registration_date : 'localdate', 
+            first_registration_date_lux : 'localdate', 
+            number : 'int', 
+            usage_code : 'text', 
+            european_category_code : 'text', 
+            statec_category : 'int', 
+            origin_country : 'text', 
+            operation_type : 'text'
         )
     )
-    ASSOCIATIONS ( brand_model, bodywork_fact_car_details, usage_information_fact_car_details, statec_category_fact_car_details, model_car_details, fact_car_details_countries )
+    ASSOCIATIONS ( brand_model, bodywork_fact_car_details, usage_information_fact_car_details, statec_category_fact_car_details, model_car_details, fact_car_details_countries, fact_car_details_operation_type )
     OPTIONS ( NULLVALUESASEMPTYXMLELEMENTS = false ) 
     OPENAPI2 ( API_VERSION = '1.0.0' ) 
     FOLDER = '/09 - data services';
