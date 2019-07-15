@@ -1,12 +1,13 @@
 ﻿CREATE OR REPLACE INTERFACE VIEW model (
         model_id:text,
+        model:text (sourcetyperadix = '10', sourcetypesize = '60', description = 'Commercial model name', sourcetypeid = '12'),
         brand_code:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Manufacturer Code', sourcetypeid = '4'),
-        model:text (sourcetyperadix = '10', sourcetypesize = '60', description = 'Commercial model name', sourcetypeid = '12')
+        brand_name:text
     )
     SET IMPLEMENTATION fv_model
     FOLDER = '/06 - interfaces'
     DESCRIPTION = 'Car models' ;
 
 ALTER VIEW model
- LAYOUT (fv_model = [686, 20, 200, 86]);
+ LAYOUT (fv_model = [686, 20, 200, 106]);
 
