@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW fv_calendar FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'date' ) AS SELECT sp_generate_calendar.date AS date, getyear(date) AS year, concat(getyear(date), '-', getquarter(date)) AS quarter, concat(getyear(date), '-', leftpad(getmonth(date), 2, '0')) AS month, getmonth(date) AS month_of_year, getquarter(date) AS quarter_of_year FROM sp_generate_calendar() AS sp_generate_calendar INNER JOIN dv_date_range AS dv_date_range ON (sp_generate_calendar.start_date = dv_date_range.first_date AND sp_generate_calendar.end_date = dv_date_range.last_date) ;
+
+ALTER VIEW fv_calendar
+ LAYOUT (sp_generate_calendar = [20, 20, 200, 86], dv_date_range = [609, 125, 200, 66]);
+

@@ -1,0 +1,9 @@
+﻿CREATE OR REPLACE VIEW dv_date_range FOLDER = '/04 - derived views' AS SELECT min(datcirprm) AS first_date, max(datcirprm) AS last_date FROM dv_immatriculations_incremental;
+
+ALTER VIEW dv_date_range
+ LAYOUT (dv_immatriculations_incremental = [20, 20, 255, 666]);
+
+ALTER VIEW dv_date_range
+ CACHE PARTIAL
+     BATCHSIZEINCACHE DEFAULT TIMETOLIVEINCACHE DEFAULT;
+

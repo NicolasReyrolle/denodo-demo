@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE PROCEDURE sp_generate_calendar
+    CLASSNAME='lu.oktopus.denodo.GenerateCalendar'
+    JARS 'oktopus-stored-procedures'
+    FOLDER = '/02 - base views';
+

@@ -1,0 +1,14 @@
+﻿CREATE OR REPLACE INTERFACE VIEW i_fv_calendar (
+        date:localdate (sourcetypeid = '91'),
+        year:long,
+        quarter:text,
+        month:text,
+        month_of_year:long,
+        quarter_of_year:long
+    )
+    SET IMPLEMENTATION fv_calendar
+    FOLDER = '/06 - interfaces';
+
+ALTER VIEW i_fv_calendar
+ LAYOUT (fv_calendar = [667, 47, 235, 146]);
+
