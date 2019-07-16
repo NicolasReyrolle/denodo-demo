@@ -72,7 +72,7 @@
             european_category_code : 'text', 
             statec_category : 'int', 
             origin_country : 'text', 
-            operation_type : 'text'
+            operation_code : 'text'
         ),
         VIEW fuel FIELDS (
             fuel_code : 'text', 

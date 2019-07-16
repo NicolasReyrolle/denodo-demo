@@ -48,7 +48,6 @@
 /databases/luxembourg_cars/folder.02 - base views/views/bv_code_ec_induti.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_usage_indicator.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/usage_information.vql
-/extensions/jars/denodo-xtrafuncs-vdp-string-7.0.vql
 /databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_fuel_mapping.vql
 /databases/luxembourg_cars/folder.02 - base views/views/bv_fuel_mapping.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_fact_immatriculations.vql

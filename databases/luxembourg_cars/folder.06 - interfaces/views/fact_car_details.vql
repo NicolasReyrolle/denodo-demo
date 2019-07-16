@@ -17,7 +17,7 @@
         european_category_code:text,
         statec_category:int,
         origin_country:text,
-        operation_type:text,
+        operation_code:text,
         fuel_code:int
     )
     SET IMPLEMENTATION fv_fact_immatriculations(
@@ -39,7 +39,7 @@
         european_category_code = cateu,
         statec_category = catstc,
         origin_country = paypvn,
-        operation_type = codeop,
+        operation_code = codeop,
         fuel_code = codcrb    
 )
     FOLDER = '/06 - interfaces'
