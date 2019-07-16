@@ -5,14 +5,16 @@
         code_operation = 'code_operation' (OPT),
         french_label = 'french_label' (OPT),
         english_label = 'english_label' (OPT),
-        operation_type = 'operation_type' (OPT)
+        operation_type = 'operation_type' (OPT),
+        count = 'count' (OPT)
     );
 
 CREATE OR REPLACE TABLE bv_code_operation I18N us_pst (
         code_operation:text, 
         french_label:text, 
         english_label:text, 
-        operation_type:text
+        operation_type:text, 
+        count:text
     )
     FOLDER = '/02 - base views'
     PRIMARY KEY ( 'code_operation' )
@@ -25,8 +27,9 @@ CREATE OR REPLACE TABLE bv_code_operation I18N us_pst (
              ADD french_label (=,in) OPT ANY
              ADD english_label (=,in) OPT ANY
              ADD operation_type (=,in) OPT ANY
+             ADD count (=,in) OPT ANY
         )
-        OUTPUTLIST (code_operation, english_label, french_label, operation_type
+        OUTPUTLIST (code_operation, count, english_label, french_label, operation_type
         )
         WRAPPER (df bv_code_operation)
     );
