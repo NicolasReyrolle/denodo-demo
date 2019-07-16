@@ -1,20 +1,20 @@
-input_fuel;rest_fuel;french_label
-CNG(GAZ NATUREL COMPRIME);petrol;Gaz
-DIESEL;diesel;Diesel
-DIESEL (GASOIL-FUEL);diesel;Diesel
-DIESEL + LPG;diesel;Hybride
-ELECTRIQUE;electric;Electrique
-ESSENCE;petrol;Essence
-ESSENCE + CNG;petrol;Hybride
-ESSENCE + LPG;petrol;Hybride
-ESSENCE + METHANE;petrol;Hybride
-ESSENCE / ETHANOL;petrol;Essence
-HYBRIDE - DIE./ELEC. NOVC;diesel;Hybride
-HYBRIDE - DIE./ELEC. OVC;diesel;Hybride
-HYBRIDE - ELECTRIQUE/ESS.;petrol;Hybride
-HYBRIDE - ESS./ELEC. NOVC;diesel;Hybride
-HYBRIDE - ESS./ELEC. OVC;diesel;Hybride
-INCONNU;unknown;Inconnu
-LNG;petrol;Gaz
-LPG;petrol;Gaz
-PAS DE CARBURANT;none;Aucun
+codcrb;libcrb;rest_fuel;french_label
+9;CNG(GAZ NATUREL COMPRIME);petrol;Gaz
+2;DIESEL;diesel;Diesel
+11;DIESEL (GASOIL-FUEL);diesel;Diesel
+17;DIESEL + LPG;diesel;Hybride
+4;ELECTRIQUE;electric;Electrique
+1;ESSENCE;petrol;Essence
+8;ESSENCE + CNG;petrol;Hybride
+6;ESSENCE + LPG;petrol;Hybride
+12;ESSENCE + METHANE;petrol;Hybride
+16;ESSENCE / ETHANOL;petrol;Essence
+15;HYBRIDE - DIE./ELEC. NOVC;diesel;Hybride
+18;HYBRIDE - DIE./ELEC. OVC;diesel;Hybride
+14;HYBRIDE - ELECTRIQUE/ESS.;petrol;Hybride
+10;HYBRIDE - ESS./ELEC. NOVC;diesel;Hybride
+13;HYBRIDE - ESS./ELEC. OVC;diesel;Hybride
+7;INCONNU;unknown;Inconnu
+19;LNG;petrol;Gaz
+3;LPG;petrol;Gaz
+0;PAS DE CARBURANT;none;Aucun
