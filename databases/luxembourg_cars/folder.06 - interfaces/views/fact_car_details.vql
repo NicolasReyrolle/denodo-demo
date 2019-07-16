@@ -11,7 +11,7 @@
         bodywork_code:text,
         first_registration_date:localdate (sourcetypeid = '91'),
         first_registration_date_lux:localdate (sourcetypeid = '91'),
-        end_of_registration_date:text,
+        end_of_registration_date:localdate (sourcetypeid = '91'),
         number:int,
         usage_code:text,
         european_category_code:text,
