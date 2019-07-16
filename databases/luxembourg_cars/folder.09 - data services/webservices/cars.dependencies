@@ -53,3 +53,5 @@
 /databases/luxembourg_cars/folder.02 - base views/views/bv_fuel_mapping.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_fact_immatriculations.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/fact_car_details.vql
+/databases/luxembourg_cars/folder.05 - final views/views/fv_fuel.vql
+/databases/luxembourg_cars/folder.06 - interfaces/views/fuel.vql

@@ -59,7 +59,6 @@
             first_registration_period : 'text', 
             model_id : 'text', 
             mass_running_order : 'int', 
-            fuel_type : 'text', 
             cylinders_count : 'int', 
             net_power_kw : 'int', 
             engine_capacity : 'int', 
@@ -74,6 +73,11 @@
             statec_category : 'int', 
             origin_country : 'text', 
             operation_type : 'text'
+        ),
+        VIEW fuel FIELDS (
+            fuel_code : 'text', 
+            fuel_description : 'text', 
+            fuel_type : 'text'
         )
     )
     ASSOCIATIONS ( brand_model, bodywork_fact_car_details, usage_information_fact_car_details, statec_category_fact_car_details, model_car_details, fact_car_details_countries, fact_car_details_operation_type )

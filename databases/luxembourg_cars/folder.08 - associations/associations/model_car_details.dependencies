@@ -18,9 +18,9 @@
 /databases/luxembourg_cars/folder.05 - final views/views/fv_model.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/model.vql
 /extensions/jars/denodo-xtrafuncs-vdp-string-7.0.vql
-/databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_fuel_mapping.vql
-/databases/luxembourg_cars/folder.02 - base views/views/bv_fuel_mapping.vql
 /databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_code_operation.vql
 /databases/luxembourg_cars/folder.02 - base views/views/bv_code_operation.vql
+/databases/luxembourg_cars/folder.01 - data sources/datasources/df/ds_fuel_mapping.vql
+/databases/luxembourg_cars/folder.02 - base views/views/bv_fuel_mapping.vql
 /databases/luxembourg_cars/folder.05 - final views/views/fv_fact_immatriculations.vql
 /databases/luxembourg_cars/folder.06 - interfaces/views/fact_car_details.vql

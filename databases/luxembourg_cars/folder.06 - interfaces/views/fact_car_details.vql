@@ -3,7 +3,6 @@
         first_registration_period:text,
         model_id:text (sourcetyperadix = '10', sourcetypesize = '32', sourcetypeid = '12'),
         mass_running_order:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
-        fuel_type:text (sourcetyperadix = '10', sourcetypesize = '40', description = 'Fuel description', sourcetypeid = '12'),
         cylinders_count:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
         net_power_kw:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
         engine_capacity:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
@@ -18,14 +17,14 @@
         european_category_code:text,
         statec_category:int,
         origin_country:text,
-        operation_type:text
+        operation_type:text,
+        fuel_code:int
     )
     SET IMPLEMENTATION fv_fact_immatriculations(
         period = period,
         first_registration_period = first_registration_period,
         model_id = model_id,
         mass_running_order = mvid,
-        fuel_type = fuel_type,
         cylinders_count = nbrcyl,
         net_power_kw = pkw,
         engine_capacity = cyd,
@@ -40,11 +39,12 @@
         european_category_code = cateu,
         statec_category = catstc,
         origin_country = paypvn,
-        operation_type = codeop    
+        operation_type = codeop,
+        fuel_code = codcrb    
 )
     FOLDER = '/06 - interfaces'
     DESCRIPTION = 'Car details' ;
 
 ALTER VIEW fact_car_details
- LAYOUT (fv_fact_immatriculations = [615, 20, 205, 298]);
+ LAYOUT (fv_fact_immatriculations = [615, 20, 205, 388]);
 

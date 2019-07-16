@@ -1,0 +1,6 @@
+﻿CREATE OR REPLACE VIEW fv_fuel FOLDER = '/05 - final views'
+    PRIMARY KEY ( 'fuel_code' ) AS SELECT bv_fuel_mapping.codcrb AS fuel_code, bv_fuel_mapping.libcrb AS fuel_description, bv_fuel_mapping.french_label AS fuel_type FROM bv_fuel_mapping;
+
+ALTER VIEW fv_fuel
+ LAYOUT (bv_fuel_mapping = [20, 20, 200, 106]);
+

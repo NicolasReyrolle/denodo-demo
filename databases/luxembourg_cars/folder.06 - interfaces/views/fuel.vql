@@ -1,0 +1,11 @@
+﻿CREATE OR REPLACE INTERFACE VIEW fuel (
+        fuel_code:text,
+        fuel_description:text,
+        fuel_type:text
+    )
+    SET IMPLEMENTATION fv_fuel
+    FOLDER = '/06 - interfaces';
+
+ALTER VIEW fuel
+ LAYOUT (fv_fuel = [610, 23, 205, 86]);
+
