@@ -1,7 +1,8 @@
-code_operation;french_label;english_label;operation_type
-N;Nouvelle Immatriculation;New registration;Input
-I;Importation;Import;Input
-T;Transcription / vente à l'intérieur du Pays;Inland Transfer;Transfer
-E;Exportation (immatriculé >= 1 ans);Export (registered >= 1 year);Output
-H;Hors circulation;Vehicle registration suspension;Output
-E1;Exportation;Export;Output
+code_operation;french_label;english_label;operation_type;count
+N;Nouvelle Immatriculation;New registration;Input;1
+I;Importation;Import;Input;1
+T;Transcription / vente à l'intérieur du Pays;Inland Transfer;Transfer;0
+E;Exportation (immatriculé >= 1 ans);Export (registered >= 1 year);Outpu;0
+H;Hors circulation;Vehicle registration suspension;Output;-1
+E1;Exportation;Export;Output;0
+
