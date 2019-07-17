@@ -1,5 +1,10 @@
 ﻿CREATE OR REPLACE VIEW iv_bodywork FOLDER = '/03 - integration views'
-    PRIMARY KEY ( 'code' ) AS SELECT leftpad(bv_code_ec_codcar.code, 2, '0') AS code, bv_code_ec_codcar.libelle AS label, coalesce(bv_code_ec_codcar.category, '** Unclassified **') AS category, coalesce(bv_code_ec_codcar.type, '** Unclassified **') AS type FROM bv_code_ec_codcar;
+    PRIMARY KEY ( 'code' ) (
+    code (description = 'Bodywork code'),
+    category (description = 'Bodywork category'),
+    type (description = 'Bodywork type')
+)
+ AS SELECT leftpad(bv_code_ec_codcar.code, 2, '0') AS code, bv_code_ec_codcar.libelle AS label, coalesce(bv_code_ec_codcar.category, '** Unclassified **') AS category, coalesce(bv_code_ec_codcar.type, '** Unclassified **') AS type FROM bv_code_ec_codcar;
 
 ALTER VIEW iv_bodywork
  LAYOUT (bv_code_ec_codcar = [20, 20, 200, 106]);

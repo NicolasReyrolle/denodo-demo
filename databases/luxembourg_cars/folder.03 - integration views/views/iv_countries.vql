@@ -1,5 +1,11 @@
 ﻿CREATE OR REPLACE VIEW iv_countries FOLDER = '/03 - integration views'
-    PRIMARY KEY ( 'alpha2code' ) AS SELECT alpha2code AS alpha2code, alpha3code AS alpha3code, name AS label_en, (translations).fr AS label_fr FROM FLATTEN bv_countries AS v ( v.jsonarray);
+    PRIMARY KEY ( 'alpha2code' ) (
+    alpha2code (description = 'ISO code 2 for the country'),
+    alpha3code (description = 'ISO code 3 for the country'),
+    label_en (description = 'Country name (english)'),
+    label_fr (description = 'Country name (french)')
+)
+ AS SELECT alpha2code AS alpha2code, alpha3code AS alpha3code, name AS label_en, (translations).fr AS label_fr FROM FLATTEN bv_countries AS v ( v.jsonarray);
 
 ALTER VIEW iv_countries
  LAYOUT (bv_countries = [20, 20, 410, 45]);
