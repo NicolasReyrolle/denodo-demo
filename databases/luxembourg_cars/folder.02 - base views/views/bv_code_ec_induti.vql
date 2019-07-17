@@ -1,6 +1,6 @@
 ﻿CREATE OR REPLACE TABLE bv_code_ec_induti I18N us_pst (
-        induti:text (sourcetypeid = '12'), 
-        indicationutilisation_0:text (sourcetypeid = '12')
+        induti:text (sourcetypeid = '12', description = 'Usage code'), 
+        indicationutilisation_0:text (sourcetypeid = '12', description = 'Usage description (french)')
     )
     FOLDER = '/02 - base views'
     PRIMARY KEY ( 'induti' )

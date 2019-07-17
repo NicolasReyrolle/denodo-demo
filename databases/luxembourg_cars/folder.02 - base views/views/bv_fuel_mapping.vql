@@ -9,10 +9,10 @@
     );
 
 CREATE OR REPLACE TABLE bv_fuel_mapping I18N us_pst (
-        codcrb:text, 
-        libcrb:text, 
-        rest_fuel:text, 
-        french_label:text
+        codcrb:text (description = 'Fuel code'), 
+        libcrb:text (description = 'Fuel description'), 
+        rest_fuel:text (description = 'Fuel name for the tax REST endpoint'), 
+        french_label:text (description = 'Fuel description (french)')
     )
     FOLDER = '/02 - base views'
     PRIMARY KEY ( 'codcrb' )

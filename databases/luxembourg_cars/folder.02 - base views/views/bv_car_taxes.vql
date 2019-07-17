@@ -12,11 +12,11 @@
     );
 
 CREATE OR REPLACE TABLE bv_car_taxes I18N us_pst (
-        co2:int, 
-        taxrate:double, 
-        fuel:text, 
-        maxco2:int, 
-        minco2:int
+        co2:int (description = 'CO2 emission'), 
+        taxrate:double (description = 'Tax rate applied to the vehicle'), 
+        fuel:text (description = 'Fuel used'), 
+        maxco2:int (description = 'Maximum CO2 for the range'), 
+        minco2:int (description = 'Minimum CO2 for the range')
     )
     FOLDER = '/02 - base views'
     PRIMARY KEY ( 'co2' , 'fuel' )

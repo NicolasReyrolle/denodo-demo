@@ -10,11 +10,11 @@
     );
 
 CREATE OR REPLACE TABLE bv_code_operation I18N us_pst (
-        code_operation:text, 
-        french_label:text, 
-        english_label:text, 
-        operation_type:text, 
-        count:text
+        code_operation:text (description = 'Operation code'), 
+        french_label:text (description = 'Operation description (french)'), 
+        english_label:text (description = 'Operation description (english)'), 
+        operation_type:text (description = 'Operation type (in/out/transfer)'), 
+        count:text (description = 'Counter for the incremental file')
     )
     FOLDER = '/02 - base views'
     PRIMARY KEY ( 'code_operation' )
