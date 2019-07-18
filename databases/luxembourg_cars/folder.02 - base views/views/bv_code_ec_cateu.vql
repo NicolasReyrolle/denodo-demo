@@ -1,7 +1,7 @@
 ﻿CREATE OR REPLACE TABLE bv_code_ec_cateu I18N us_pst (
         code:text (sourcetypeid = '12', description = 'European category code'), 
-        categorie:text (sourcetypeid = '12'), 
-        type:text (sourcetypeid = '12')
+        categorie:text (sourcetypeid = '12', description = 'European category name'), 
+        type:text (sourcetypeid = '12', description = 'European category type')
     )
     FOLDER = '/02 - base views'
     PRIMARY KEY ( 'code' )

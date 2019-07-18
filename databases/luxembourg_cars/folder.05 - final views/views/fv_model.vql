@@ -1,10 +1,13 @@
 ﻿CREATE OR REPLACE VIEW fv_model FOLDER = '/05 - final views'
-    PRIMARY KEY ( 'model_id' ) AS SELECT model_id AS model_id, max(typcom) AS model, brand_code AS brand_code, max(brand_name) AS brand_name FROM dv_immatriculations_incremental GROUP BY model_id, brand_code;
+    PRIMARY KEY ( 'model_id' ) (
+    model (description = 'Model name'),
+    brand_name (description = 'Manufacturer wording')
+)
+ AS SELECT model_id AS model_id, max(typcom) AS model, brand_code AS brand_code, max(brand_name) AS brand_name FROM dv_immatriculations_incremental GROUP BY model_id, brand_code;
 
 ALTER VIEW fv_model
  LAYOUT (dv_immatriculations_incremental = [20, 20, 255, 606]);
 
 ALTER VIEW fv_model
- CACHE PARTIAL
-     BATCHSIZEINCACHE DEFAULT TIMETOLIVEINCACHE DEFAULT;
+ CACHE PARTIAL TIMETOLIVEINCACHE DEFAULT;
 
