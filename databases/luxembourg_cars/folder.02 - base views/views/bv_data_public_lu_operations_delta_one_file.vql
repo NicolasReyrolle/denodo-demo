@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE TABLE bv_data_public_lu_operations_delta_one_file I18N us_pst (
-        codeop:text (sourcetypeid = '12', description = 'Data period (YYYYMM)'), 
+        codeop:text (sourcetypeid = '12', description = 'Operation code'), 
         catstc:int (sourcetypeid = '4', description = 'Statec category code'), 
         codcar:text (sourcetypeid = '12', description = 'European Bodywork Code'), 
         libcar:text (sourcetypeid = '12', description = 'Bodywork wording'), 
@@ -15,7 +15,7 @@
         pvrvar:text (sourcetypeid = '12', description = 'Variant'), 
         pvrver:text (sourcetypeid = '12', description = 'Version'), 
         datcirprm:int (sourcetypeid = '4', description = 'Date of first registration'), 
-        datcir_gd:int (sourcetypeid = '4', description = 'Date of first registration in Luxemburg'), 
+        datcir_gd:int (sourcetypeid = '4', description = 'Date of first registration in Luxembourg'), 
         datcir:int (sourcetypeid = '4', description = 'Date of the registration to which this certificate refers'), 
         dathorcir:int (sourcetypeid = '4', description = 'Off road declaration date'), 
         mvid:int (sourcetypeid = '4', description = 'Mass in running order'), 

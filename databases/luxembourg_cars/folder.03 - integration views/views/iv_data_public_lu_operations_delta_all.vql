@@ -2,7 +2,7 @@
     datcirprm (description = 'Date of first registration'),
     datcir_gd (description = 'Date of first registration in Luxembourg'),
     dathorcir (description = 'Off-road declaration date'),
-    pkw (description = 'Engine power'),
+    pkw (description = 'Engine power (KW)'),
     l100km (description = 'fuel consumption in l/100km (Combined)'),
     infparticule (description = 'Exhaust emissions particulates (mass in g/km)'),
     infnox (description = 'Exhaust emissions Nox in g/km'),

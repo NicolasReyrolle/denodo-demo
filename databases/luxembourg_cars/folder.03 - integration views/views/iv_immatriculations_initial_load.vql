@@ -1,6 +1,11 @@
 ﻿CREATE OR REPLACE VIEW iv_immatriculations_initial_load FOLDER = '/03 - integration views' (
     codmrq (description = 'Manufacturer Code'),
-    typcom (description = 'Commercial model name')
+    typcom (description = 'Commercial model name'),
+    datcirprm (description = 'Date of first registration'),
+    datcir_gd (description = 'Date of first registration in Luxembourg'),
+    model_id (description = 'Model identifier'),
+    codeop (description = 'Operation code'),
+    dathorcir (description = 'Off-road declaration date')
 )
  AS SELECT bv_immatriculations_first_load.period AS period, bv_immatriculations_first_load.codcar AS codcar, bv_immatriculations_first_load.libcar AS libcar, bv_immatriculations_first_load.cateu AS cateu, bv_immatriculations_first_load.codmrq AS codmrq, bv_immatriculations_first_load.libmrq AS libmrq, coalesce(bv_immatriculations_first_load.typcom, concat(bv_immatriculations_first_load.libmrq, ' ', bv_immatriculations_first_load.libcar)) AS typcom, bv_immatriculations_first_load.mvid AS mvid, bv_immatriculations_first_load.i4x4 AS i4x4, bv_immatriculations_first_load.lon AS lon, bv_immatriculations_first_load.lar AS lar, bv_immatriculations_first_load.hau AS hau, bv_immatriculations_first_load.essim AS essim, bv_immatriculations_first_load.nbrcyl AS nbrcyl, bv_immatriculations_first_load.pkw AS pkw, bv_immatriculations_first_load.cyd AS cyd, bv_immatriculations_first_load.infco2 AS infco2, bv_immatriculations_first_load.l100km AS l100km, bv_immatriculations_first_load.infparticule AS infparticule, bv_immatriculations_first_load.infnox AS infnox, bv_immatriculations_first_load.eunorm AS eunorm, bv_immatriculations_first_load.libcrb AS libcrb, bv_immatriculations_first_load.catstc AS catstc, hash((bv_immatriculations_first_load.codmrq||coalesce(bv_immatriculations_first_load.typcom, (bv_immatriculations_first_load.libmrq||bv_immatriculations_first_load.libcar)))) AS model_id, cast('localdate', cast('text', bv_immatriculations_first_load.datcirprm)) AS datcirprm, cast('localdate', cast('text', bv_immatriculations_first_load.datcir_gd)) AS datcir_gd, bv_immatriculations_first_load.infouti AS infouti, bv_immatriculations_first_load.induti AS induti, 'N' AS codeop, bv_immatriculations_first_load.paypvn AS paypvn, cast('localdate', cast('text', bv_immatriculations_first_load.dathorcir)) AS dathorcir, bv_immatriculations_first_load.codcrb AS codcrb FROM bv_immatriculations_first_load;
 
