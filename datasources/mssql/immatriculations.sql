@@ -122,7 +122,7 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Date of the registration to which this certificate refers' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'immatriculations', @level2type=N'COLUMN',@level2name=N'DATCIR'
 GO
 
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Off road declaration date' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'immatriculations', @level2type=N'COLUMN',@level2name=N'DATHORCIR'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Off-road declaration date' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'immatriculations', @level2type=N'COLUMN',@level2name=N'DATHORCIR'
 GO
 
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Mass in running order' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'immatriculations', @level2type=N'COLUMN',@level2name=N'MVID'
@@ -209,7 +209,7 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Number of cylinders' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'immatriculations', @level2type=N'COLUMN',@level2name=N'NBRCYL'
 GO
 
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Engine capacity' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'immatriculations', @level2type=N'COLUMN',@level2name=N'PKW'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Engine power (KW)' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'immatriculations', @level2type=N'COLUMN',@level2name=N'PKW'
 GO
 
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Engine capacity' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'immatriculations', @level2type=N'COLUMN',@level2name=N'CYD'
