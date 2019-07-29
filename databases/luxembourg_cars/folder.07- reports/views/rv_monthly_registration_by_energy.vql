@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE VIEW rv_monthly_registration_by_energy FOLDER = '/07- reports'
-    PRIMARY KEY ( 'first_registration_period' , 'fuel_type' ) AS SELECT fact_car_details.first_registration_period AS first_registration_period, fuel.fuel_type AS fuel_type, sum(fact_car_details.number) AS count FROM fact_car_details AS fact_car_details INNER JOIN fuel AS fuel ON fact_car_details.fuel_code = fuel.fuel_code  GROUP BY fact_car_details.first_registration_period, fuel.fuel_type;
+    PRIMARY KEY ( 'first_registration_period' , 'fuel_type' ) AS SELECT fact_car_details.first_registration_period AS first_registration_period, fuel.fuel_type AS fuel_type, sum(fact_car_details.number) AS count FROM fact_car_details AS fact_car_details INNER JOIN fuel AS fuel ON fact_car_details.fuel_code = fuel.fuel_code  WHERE fact_car_details.operation_code = 'N' GROUP BY fact_car_details.first_registration_period, fuel.fuel_type;
 
 ALTER VIEW rv_monthly_registration_by_energy
  LAYOUT (fact_car_details = [168, 188, 200, 225], fuel = [627, 117, 200, 86]);
